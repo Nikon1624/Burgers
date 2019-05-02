@@ -2,43 +2,37 @@
   font-family: "Gagalin";
   src: url("../fonts/Gagalin/gagalin-regular.woff") format("woff"), url("../fonts/Gagalin/gagalin-regular.woff2") format("woff2");
   font-weight: 400;
-  font-style: normal;
-  font-display: swap; }
+  font-style: normal; }
 
 @font-face {
   font-family: "Lifehack";
   src: url("../fonts/lifehackmedium.woff") format("woff"), url("../fonts/lifehackmedium.woff2") format("woff2");
   font-weight: 500;
-  font-style: normal;
-  font-display: swap; }
+  font-style: normal; }
 
 @font-face {
   font-family: "Ubuntu";
   src: url("../fonts/Ubuntu/ubuntu-light.woff") format("woff"), url("../fonts/Ubuntu/ubuntu-light.woff2") format("woff2");
   font-weight: 300;
-  font-style: normal;
-  font-display: swap; }
+  font-style: normal; }
 
 @font-face {
   font-family: "Ubuntu";
   src: url("../fonts/Ubuntu/ubuntu-regular.woff") format("woff"), url("../fonts/Ubuntu/ubuntu-regular.woff2") format("woff2");
   font-weight: 400;
-  font-style: normal;
-  font-display: swap; }
+  font-style: normal; }
 
 @font-face {
   font-family: "Ubuntu";
   src: url("../fonts/Ubuntu/ubuntu-medium.woff") format("woff"), url("../fonts/Ubuntu/ubuntu-medium.woff2") format("woff2");
   font-weight: 500;
-  font-style: normal;
-  font-display: swap; }
+  font-style: normal; }
 
 @font-face {
   font-family: "Ubuntu";
   src: url("../fonts/Ubuntu/ubuntu-b.woff") format("woff"), url("../fonts/Ubuntu/ubuntu-b.woff2") format("woff2");
   font-weight: 700;
-  font-style: normal;
-  font-display: swap; }
+  font-style: normal; }
 
 body {
   position: relative;
@@ -79,7 +73,6 @@ img {
   box-sizing: border-box;
   width: 100%;
   height: 100vh;
-  min-height: 650px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -185,7 +178,7 @@ img {
 
 .toggle {
   position: fixed;
-  right: 2%;
+  right: 3%;
   top: 90px;
   z-index: 1; }
   .toggle__list {
@@ -232,12 +225,9 @@ img {
   background-position: center; }
 
 .advantages {
-  display: flex;
-  flex-direction: column;
   box-sizing: border-box;
   width: 100%;
   height: 100vh;
-  min-height: 650px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -246,8 +236,6 @@ img {
   text-align: center;
   background-color: #faf4f0;
   background-image: url("../img/advantages-bg.jpg"); }
-  .advantages__content-wrapper {
-    margin: auto; }
   .advantages__title {
     margin: 0;
     padding: 0;
@@ -290,7 +278,6 @@ img {
   box-sizing: border-box;
   width: 100%;
   height: 100vh;
-  min-height: 650px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -300,14 +287,12 @@ img {
     padding: 0;
     list-style: none;
     display: flex;
-    flex-wrap: wrap;
-    min-height: 100%; }
+    flex-wrap: wrap; }
   .reviews__item {
     position: relative;
     box-sizing: border-box;
     width: 25%;
     height: 50vh;
-    min-height: 325px;
     color: #ffffff;
     overflow: hidden; }
   .reviews__img {
