@@ -6,7 +6,6 @@
     @include list-reset;
     display: flex;
     flex-wrap: wrap;
-    min-height: 100%;
   }
 
   &__item {
@@ -14,7 +13,6 @@
     box-sizing: border-box;
     width: 25%;
     height: 50vh;
-    min-height: 325px;
     color: #ffffff;
     overflow: hidden;
   }
