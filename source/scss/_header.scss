@@ -1,14 +1,15 @@
 .header {
-    display: flex;
-    align-items: center;
-    padding-top: 11px;
+  display: flex;
+  align-items: center;
+  padding-top: 11px;
 
-    &__logo {
-        flex-shrink: 0;
-    }
+  &__logo {
+    flex-shrink: 0;
+    margin-right: 10px;
+  }
 
-    &__nav {
-        margin-left: auto;
-        margin-top: -8px;
-    }
+  &__nav {
+    margin-left: auto;
+    margin-top: -8px;
+  }
 }

@@ -1,17 +1,18 @@
 body {
-    position: relative;
-    margin: 0;
-    font-family: $ubuntu;
-    font-size: 14px;
-    line-height: 24px;
-    color: #ffffff;
+  position: relative;
+  margin: 0;
+  font-family: $ubuntu;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 300;
+  color: $dark-text;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }

@@ -40,7 +40,8 @@ body {
   font-family: "Ubuntu", "Arial", sans-serif;
   font-size: 14px;
   line-height: 24px;
-  color: #ffffff; }
+  font-weight: 300;
+  color: #2f3234; }
 
 a {
   text-decoration: none; }
@@ -69,21 +70,23 @@ img {
   padding: 0 10px; }
 
 .intro {
+  box-sizing: border-box;
   width: 100%;
   height: 100vh;
-  width: 100%;
-  background-color: #0b0e0e;
-  background-image: url("../img/intro-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center; }
+  background-position: center;
+  position: relative;
+  background-color: #0b0e0e;
+  background-image: url("../img/intro-bg.jpg"); }
 
 .header {
   display: flex;
   align-items: center;
   padding-top: 11px; }
   .header__logo {
-    flex-shrink: 0; }
+    flex-shrink: 0;
+    margin-right: 10px; }
   .header__nav {
     margin-left: auto;
     margin-top: -8px; }
@@ -123,6 +126,8 @@ img {
   transition: 0.2s; }
   .nav__link:hover {
     text-decoration: underline; }
+  .nav__link:active {
+    color: rgba(255, 255, 255, 0.5); }
 
 .button {
   font-size: 13px;
@@ -156,7 +161,8 @@ img {
     font-family: "Lifehack", "Arial", sans-serif;
     font-size: 65px;
     line-height: 60px;
-    font-weight: 500; }
+    font-weight: 500;
+    color: #ffffff; }
   .slogan__title {
     font-family: "Gagalin", "Arial", sans-serif;
     font-size: 72px;
@@ -169,7 +175,8 @@ img {
 .toggle {
   position: fixed;
   right: 3%;
-  top: 90px; }
+  top: 90px;
+  z-index: 1; }
   .toggle__list {
     margin: 0;
     padding: 0;
@@ -200,21 +207,69 @@ img {
     .toggle__button--active, .toggle__button:hover {
       border: 1px solid #ffffff; }
 
-.button-scroll {
+.arrow {
   position: absolute;
   display: block;
   left: 50%;
-  bottom: 5px;
-  width: 50px;
-  height: 50px;
+  bottom: 40px;
+  width: 30px;
+  height: 15px;
   margin-left: -25px;
   border-radius: 50%;
   background-image: url("../img/icons/arrow-scroll.svg");
   background-repeat: no-repeat;
+  background-position: center; }
+
+.advantages {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
   background-position: center;
-  background-size: 30px auto;
-  transition: 0.2s; }
-  .button-scroll:hover {
-    background-color: rgba(0, 0, 0, 0.4); }
+  padding-top: 135px;
+  padding-bottom: 155px;
+  text-align: center;
+  background-color: #faf4f0;
+  background-image: url("../img/advantages-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; }
+  .advantages__title {
+    margin: 0;
+    padding: 0;
+    font-family: "Gagalin", "Arial", sans-serif;
+    font-size: 72px;
+    line-height: 64px;
+    font-weight: 500;
+    color: #f9b43b;
+    margin-bottom: 50px;
+    color: #2f3234; }
+  .advantages__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between; }
+  .advantages__item {
+    width: 31.914%; }
+  .advantages__icon-wrapper {
+    display: flex;
+    width: 100%;
+    height: 90px;
+    margin-bottom: 25px; }
+  .advantages__icon {
+    margin: auto; }
+  .advantages__item-title {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
+    font-family: "Lifehack", "Arial", sans-serif;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 500;
+    color: #2f3234; }
+  .advantages__desc {
+    margin: 0;
+    padding: 0; }
 
 /*# sourceMappingURL=style.css.map */
