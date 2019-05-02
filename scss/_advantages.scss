@@ -1,10 +1,15 @@
 .advantages {
   @include section;
+  display: flex;
   padding-top: 135px;
   padding-bottom: 155px;
   text-align: center;
   background-color: #faf4f0;
   background-image: url("../img/advantages-bg.jpg");
+
+  &__content-wrapper {
+    margin: auto;
+  }
 
   &__title {
     @include indents-reset;

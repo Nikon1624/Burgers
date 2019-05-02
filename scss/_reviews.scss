@@ -13,6 +13,7 @@
     box-sizing: border-box;
     width: 25%;
     height: 50vh;
+    min-height: 325px;
     color: #ffffff;
     overflow: hidden;
   }
@@ -31,8 +32,7 @@
     box-sizing: border-box;
     width: 100%;
     height: 100%;
-    padding: 20px;
-    padding-top: 50px;
+    padding: 50px 8.33%;
     background-color: rgba($color: #000000, $alpha: 0.6);
     opacity: 0;
     transition: 0.4s;
