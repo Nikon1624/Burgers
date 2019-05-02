@@ -1,42 +1,44 @@
 .toggle {
-    position: fixed;
-    right: 3%;
-    top: 90px;
+  position: fixed;
+  right: 3%;
+  top: 90px;
+  z-index: 1;
 
-    &__list {
-        @include list-reset;
+  &__list {
+    @include list-reset;
+  }
+
+  &__item {
+    box-sizing: border-box;
+    width: 16px;
+    height: 16px;
+    margin-bottom: 5px;
+  }
+
+  &__button {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 6px;
+      height: 6px;
+      margin-top: -3px;
+      margin-left: -3px;
+      border-radius: 50%;
+      background-color: #ffffff;
     }
 
-    &__item {
-        box-sizing: border-box;
-        width: 16px;
-        height: 16px;
-        margin-bottom: 5px;
+    &--active,
+    &:hover {
+      border: 1px solid #ffffff;
     }
-
-    &__button {
-        position: relative;
-        display: block;
-        box-sizing: border-box;
-        width: 16px;
-        height: 16px;
-        border-radius: 50%;
-
-        &::after {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 6px;
-            height: 6px;
-            margin-top: -3px;
-            margin-left: -3px;
-            border-radius: 50%;
-            background-color: #ffffff;
-        }
-
-        &--active, &:hover {
-            border: 1px solid #ffffff;
-        }
-    }
+  }
 }

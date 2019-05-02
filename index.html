@@ -1,95 +1,128 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Burgers</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Burgers</title>
 </head>
+
 <body>
-    <nav class="toggle">
-        <ul class="toggle__list">
-            <li class="toggle__item">
-                <a class="toggle__button toggle__button--active"  href="#" aria-label="Переключить секцию"></a>
+  <nav class="toggle">
+    <ul class="toggle__list">
+      <li class="toggle__item">
+        <a class="toggle__button toggle__button--active" href="#" aria-label="Переключить секцию"></a>
+      </li>
+      <li class="toggle__item">
+        <a class="toggle__button" href="#" aria-label="Переключить секцию"></a>
+      </li>
+      <li class="toggle__item">
+        <a class="toggle__button" href="#" aria-label="Переключить секцию"></a>
+      </li>
+      <li class="toggle__item">
+        <a class="toggle__button" href="#" aria-label="Переключить секцию"></a>
+      </li>
+      <li class="toggle__item">
+        <a class="toggle__button" href="#" aria-label="Переключить секцию"></a>
+      </li>
+      <li class="toggle__item">
+        <a class="toggle__button" href="#" aria-label="Переключить секцию"></a>
+      </li>
+      <li class="toggle__item">
+        <a class="toggle__button" href="#" aria-label="Переключить секцию"></a>
+      </li>
+      <li class="toggle__item">
+        <a class="toggle__button" href="#" aria-label="Переключить секцию"></a>
+      </li>
+      <li class="toggle__item">
+        <a class="toggle__button" href="#" aria-label="Переключить секцию"></a>
+      </li>
+    </ul>
+  </nav>
+  <div class="intro">
+    <div class="container">
+      <header class="header intro__header">
+        <a class="logo header__logo" href="index.html">
+          <img class="logo__img" src="img/icons/logo.svg" alt="Логотип компании" width="92" height="69">
+        </a>
+        <nav class="nav header__nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a class="nav__link" href="#">О нас</a>
             </li>
-            <li class="toggle__item">
-                <a class="toggle__button" href="#" aria-label="Переключить секцию"></a>
+            <li class="nav__item">
+              <a class="nav__link" href="#">Бургеры</a>
             </li>
-            <li class="toggle__item">
-                <a class="toggle__button" href="#" aria-label="Переключить секцию"></a>
+            <li class="nav__item">
+              <a class="nav__link" href="#">Команда</a>
             </li>
-            <li class="toggle__item">
-                <a class="toggle__button" href="#" aria-label="Переключить секцию"></a>
+            <li class="nav__item">
+              <a class="nav__link" href="#">Меню</a>
             </li>
-            <li class="toggle__item">
-                <a class="toggle__button" href="#" aria-label="Переключить секцию"></a>
+            <li class="nav__item">
+              <a class="nav__link" href="#">Отзывы</a>
             </li>
-            <li class="toggle__item">
-                <a class="toggle__button" href="#" aria-label="Переключить секцию"></a>
+            <li class="nav__item">
+              <a class="nav__link" href="#">Как мы работаем</a>
             </li>
-            <li class="toggle__item">
-                <a class="toggle__button" href="#" aria-label="Переключить секцию"></a>
+            <li class="nav__item">
+              <a class="nav__link" href="#">Контакты</a>
             </li>
-            <li class="toggle__item">
-                <a class="toggle__button" href="#" aria-label="Переключить секцию"></a>
+            <li class="nav__item nav__item--button">
+              <a class="button nav__button" href="#">Заказать</a>
             </li>
-            <li class="toggle__item">
-                <a class="toggle__button" href="#" aria-label="Переключить секцию"></a>
-            </li>
-        </ul>
-    </nav>
-    <div class="intro">
-        <div class="container">
-            <header class="header intro__header">
-                <a class="logo header__logo" href="index.html">
-                    <img class="logo__img" src="img/icons/logo.svg" alt="Логотип компании" width="92" height="69">
-                </a>
-                <nav class="nav header__nav">
-                    <ul class="nav__list">
-                        <li class="nav__item">
-                            <a class="nav__link" href="#">О нас</a>
-                        </li>
-                        <li class="nav__item">
-                            <a class="nav__link" href="#">Бургеры</a>
-                        </li>
-                        <li class="nav__item">
-                            <a class="nav__link" href="#">Команда</a>
-                        </li>
-                        <li class="nav__item">
-                            <a class="nav__link" href="#">Меню</a>
-                        </li>
-                        <li class="nav__item">
-                            <a class="nav__link" href="#">Отзывы</a>
-                        </li>
-                        <li class="nav__item">
-                            <a class="nav__link" href="#">Как мы работаем</a>
-                        </li>
-                        <li class="nav__item">
-                            <a class="nav__link" href="#">Контакты</a>
-                        </li>
-                        <li class="nav__item nav__item--button">
-                            <a class="button nav__button" href="#">Заказать</a>
-                        </li>
-                    </ul>
-                </nav>
-            </header>
-            <section class="slogan intro__slogan">
-                <h1 class="visually-hidden">Mr.Burger - заказ натуральных бургеров</h1>
-                <div class="slogan__img-wrap">
-                    <picture class="slogan__picture">
-                        <img class="slogan__img" src="img/burger-intro1x.png" alt="Изображение бургера">
-                    </picture>
-                </div>
-                <div class="slogan__text-wrap">
-                    <b class="slogan__title">Мы делаем</b>
-                    <b class="slogan__text">натуральные бургеры</b>
-                </div>
-            </section>
-            <a class="button-scroll" href="#" aria-label="Перейти к следующей секции сайта"></a>
+          </ul>
+        </nav>
+      </header>
+      <section class="slogan intro__slogan">
+        <h1 class="visually-hidden">Mr.Burger - заказ натуральных бургеров</h1>
+        <div class="slogan__img-wrap">
+          <picture class="slogan__picture">
+            <img class="slogan__img" src="img/burger-intro1x.png" alt="Изображение бургера">
+          </picture>
         </div>
+        <div class="slogan__text-wrap">
+          <b class="slogan__title">Мы делаем</b>
+          <b class="slogan__text">натуральные бургеры</b>
+        </div>
+      </section>
+      <span class="arrow" href="#" aria-label="Перейти к следующей секции сайта"></span>
     </div>
+  </div>
+  <main class="main">
+    <section class="advantages">
+      <div class="container">
+        <h2 class="advantages__title">Мы лучшие</h2>
+        <ul class="advantages__list">
+          <li class="advantages__item">
+            <div class="advantages__icon-wrapper">
+              <img class="advantages__icon" src="img/icons/meat.svg" alt="Иконка мяса" width="97" height="89">
+            </div>
+            <h3 class="advantages__item-title">100% свежее мясо</h3>
+            <p class="advantages__desc">Драма представляет собой деструктивный цикл. Анапест представляет собой анапест. Ямб неравномерен.</p>
+          </li>
+          <li class="advantages__item">
+            <div class="advantages__icon-wrapper">
+              <img class="advantages__icon" src="img/icons/hand.svg" alt="Иконка ладони" width="73" height="85">
+            </div>
+            <h3 class="advantages__item-title">Ручная  сборка</h3>
+            <p class="advantages__desc">Драма представляет собой деструктивный цикл. Анапест представляет собой анапест. Первое полустишие притягивает сюжетный реформаторский пафос.</p>
+          </li>
+          <li class="advantages__item">
+            <div class="advantages__icon-wrapper">
+              <img class="advantages__icon" src="img/icons/natural.svg" alt="Иконка листа" width="88" height="75">
+            </div>
+            <h3 class="advantages__item-title">Натуральные ингредиенты</h3>
+            <p class="advantages__desc">Драма представляет собой деструктивный цикл. Анапест представляет собой анапест.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
 </body>
+
 </html>
