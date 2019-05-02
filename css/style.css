@@ -145,6 +145,10 @@ img {
     background-color: #c1401e; }
   .button:active {
     color: rgba(255, 255, 255, 0.5); }
+  .button--grey {
+    background-color: #2f3234; }
+    .button--grey:hover {
+      background-color: #1f2122; }
 
 .slogan {
   display: flex;
@@ -231,9 +235,7 @@ img {
   padding-bottom: 155px;
   text-align: center;
   background-color: #faf4f0;
-  background-image: url("../img/advantages-bg.jpg");
-  background-repeat: no-repeat;
-  background-size: cover; }
+  background-image: url("../img/advantages-bg.jpg"); }
   .advantages__title {
     margin: 0;
     padding: 0;
@@ -271,5 +273,60 @@ img {
   .advantages__desc {
     margin: 0;
     padding: 0; }
+
+.reviews {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: #5b5b5b; }
+  .reviews__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; }
+  .reviews__item {
+    position: relative;
+    box-sizing: border-box;
+    width: 25%;
+    height: 50vh;
+    color: #ffffff;
+    overflow: hidden; }
+  .reviews__img {
+    width: 100%; }
+  .reviews__content-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    padding-top: 50px;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: 0.4s; }
+  .reviews__author {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 15px;
+    font-family: "Gagalin", "Arial", sans-serif;
+    line-height: 28px; }
+  .reviews__quote {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px; }
+  .reviews__link {
+    display: inline-block;
+    padding-left: 15px;
+    padding-right: 15px; }
+
+.reviews__item:hover .reviews__content-wrapper {
+  opacity: 1; }
 
 /*# sourceMappingURL=style.css.map */

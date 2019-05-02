@@ -5,8 +5,6 @@
   text-align: center;
   background-color: #faf4f0;
   background-image: url("../img/advantages-bg.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
 
   &__title {
     @include indents-reset;

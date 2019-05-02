@@ -13,4 +13,12 @@
   &:active {
     color: rgba($color: #FFFFFF, $alpha: 0.5);
   }
+
+  &--grey {
+    background-color: $dark-text;
+
+    &:hover {
+      background-color: #1f2122;
+    }
+  }
 }
