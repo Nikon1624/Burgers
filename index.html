@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="mask/icons" href="img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
   <title>Burgers</title>
@@ -43,57 +43,54 @@
       </li>
     </ul>
   </nav>
-  <div class="intro">
-    <div class="container">
-      <header class="header intro__header">
-        <a class="logo header__logo" href="index.html">
-          <img class="logo__img" src="img/icons/logo.svg" alt="Логотип компании" width="92" height="69">
-        </a>
-        <nav class="nav header__nav">
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a class="nav__link" href="#">О нас</a>
-            </li>
-            <li class="nav__item">
-              <a class="nav__link" href="#">Бургеры</a>
-            </li>
-            <li class="nav__item">
-              <a class="nav__link" href="#">Команда</a>
-            </li>
-            <li class="nav__item">
-              <a class="nav__link" href="#">Меню</a>
-            </li>
-            <li class="nav__item">
-              <a class="nav__link" href="#">Отзывы</a>
-            </li>
-            <li class="nav__item">
-              <a class="nav__link" href="#">Как мы работаем</a>
-            </li>
-            <li class="nav__item">
-              <a class="nav__link" href="#">Контакты</a>
-            </li>
-            <li class="nav__item nav__item--button">
-              <a class="button nav__button" href="#">Заказать</a>
-            </li>
-          </ul>
-        </nav>
-      </header>
-      <section class="slogan intro__slogan">
-        <h1 class="visually-hidden">Mr.Burger - заказ натуральных бургеров</h1>
-        <div class="slogan__img-wrap">
-          <picture class="slogan__picture">
-            <img class="slogan__img" src="img/burger-intro1x.png" alt="Изображение бургера">
+  <header class="header body__header">
+    <a class="logo header__logo" href="index.html">
+      <img class="logo__img" src="img/icons/logo.svg" alt="Логотип компании" width="92" height="69">
+    </a>
+    <nav class="nav header__nav">
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a class="nav__link" href="#">О нас</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="#">Бургеры</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="#">Команда</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="#">Меню</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="#">Отзывы</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="#">Как мы работаем</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="#">Контакты</a>
+        </li>
+      </ul>
+    </nav>
+    <a class="button header__link" href="#">Заказать</a>
+  </header>
+  <main class="main">
+    <h1 class="visually-hidden">Mr.Burger - заказ натуральных бургеров</h1>
+    <section class="intro">
+      <div class="container intro__content-wrap">
+        <h2 class="visually-hidden">Превью</h2>
+        <div class="intro__img-wrap">
+          <picture class="intro__picture">
+            <img class="intro__img" src="img/burger-intro1x.png" alt="Изображение бургера">
           </picture>
         </div>
-        <div class="slogan__text-wrap">
-          <b class="slogan__title">Мы делаем</b>
-          <b class="slogan__text">натуральные бургеры</b>
+        <div class="intro__lead-wrap">
+          <b class="intro__title">Мы делаем</b>
+          <b class="intro__text">натуральные бургеры</b>
         </div>
-      </section>
-      <span class="arrow" href="#" aria-label="Перейти к следующей секции сайта"></span>
-    </div>
-  </div>
-  <main class="main">
+        <a class="arrow intro__arrow" href="#" aria-label="Перейти к следующей секции сайта"></a>
+      </div>
+    </section>
     <section class="advantages">
       <div class="container advantages__content-wrapper">
         <h2 class="advantages__title">Мы лучшие</h2>
@@ -103,21 +100,24 @@
               <img class="advantages__icon" src="img/icons/meat.svg" alt="Иконка мяса" width="97" height="89">
             </div>
             <h3 class="advantages__item-title">100% свежее мясо</h3>
-            <p class="advantages__desc">Драма представляет собой деструктивный цикл. Анапест представляет собой анапест. Ямб неравномерен.</p>
+            <p class="advantages__desc">Драма представляет собой деструктивный цикл. Анапест представляет собой анапест.
+              Ямб неравномерен.</p>
           </li>
           <li class="advantages__item">
             <div class="advantages__icon-wrapper">
               <img class="advantages__icon" src="img/icons/hand.svg" alt="Иконка ладони" width="73" height="85">
             </div>
-            <h3 class="advantages__item-title">Ручная  сборка</h3>
-            <p class="advantages__desc">Драма представляет собой деструктивный цикл. Анапест представляет собой анапест. Первое полустишие притягивает сюжетный реформаторский пафос.</p>
+            <h3 class="advantages__item-title">Ручная сборка</h3>
+            <p class="advantages__desc">Драма представляет собой деструктивный цикл. Анапест представляет собой анапест.
+              Первое полустишие притягивает сюжетный реформаторский пафос.</p>
           </li>
           <li class="advantages__item">
             <div class="advantages__icon-wrapper">
               <img class="advantages__icon" src="img/icons/natural.svg" alt="Иконка листа" width="88" height="75">
             </div>
             <h3 class="advantages__item-title">Натуральные ингредиенты</h3>
-            <p class="advantages__desc">Драма представляет собой деструктивный цикл. Анапест представляет собой анапест.</p>
+            <p class="advantages__desc">Драма представляет собой деструктивный цикл. Анапест представляет собой анапест.
+            </p>
           </li>
         </ul>
       </div>
@@ -125,81 +125,57 @@
     <section class="reviews">
       <h2 class="visually-hidden">Отзывы</h2>
       <ul class="reviews__list">
-        <li class="reviews__item">
-          <picture class="reviews__picture">
-            <img class="reviews__img" src="img/reviews1.jpg" alt="Автор отзыва">
-          </picture>
-          <div class="reviews__content-wrapper">
+        <li class="reviews__item reviews__item--reviews1">
+          <div class="reviews__content-wrap">
             <address class="reviews__author">Ольга Крестова</address>
             <blockquote class="reviews__quote">Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.</blockquote>
             <a class="button button--grey reviews__link" href="#">Подробнее</a>
           </div>
         </li>
-        <li class="reviews__item">
-          <picture class="reviews__picture">
-            <img class="reviews__img" src="img/reviews2.jpg" alt="Автор отзыва">
-          </picture>
-          <div class="reviews__content-wrapper">
+        <li class="reviews__item reviews__item--reviews2">
+          <div class="reviews__content-wrap">
             <address class="reviews__author">Константин Спилберг</address>
             <blockquote class="reviews__quote">Если честно, я просто в восторге от вас! Буквально пару дней назад писал отзыв и хотел чтоб в меню появился какой нибудь бургер с креветками и нежным соусом а сегодня зашел и вот он! Вот чего я хотел.</blockquote>
             <a class="button button--grey reviews__link" href="#">Подробнее</a>
           </div>
         </li>
-        <li class="reviews__item">
-          <picture class="reviews__picture">
-            <img class="reviews__img" src="img/reviews3.jpg" alt="Автор отзыва">
-          </picture>
-          <div class="reviews__content-wrapper">
+        <li class="reviews__item reviews__item--reviews3">
+          <div class="reviews__content-wrap">
             <address class="reviews__author">Светлана Измайлова</address>
             <blockquote class="reviews__quote">Спасибо большое за вкуснейшие бургеры, так держать. Я как постоянный клиент ни раз не пожалела! Это было самое большое гастрономическое наслаждение.</blockquote>
             <a class="button button--grey reviews__link" href="#">Подробнее</a>
           </div>
         </li>
-        <li class="reviews__item">
-          <picture class="reviews__picture">
-            <img class="reviews__img" src="img/reviews4.jpg" alt="Автор отзыва">
-          </picture>
-          <div class="reviews__content-wrapper">
+        <li class="reviews__item reviews__item--reviews4">
+          <div class="reviews__content-wrap">
             <address class="reviews__author">Владимир Димитров</address>
             <blockquote class="reviews__quote">Выбрали бургер, картофельные дольки и внимание крем-суп с креветками все вкусно, хорошей температуры, упаковано отлично. Крем-суп просто изумительный! Густой с насыщенным вкусом, креветки крупные и их достаточно.</blockquote>
             <a class="button button--grey reviews__link" href="#">Подробнее</a>
           </div>
         </li>
-        <li class="reviews__item">
-          <picture class="reviews__picture">
-            <img class="reviews__img" src="img/reviews5.jpg" alt="Автор отзыва">
-          </picture>
-          <div class="reviews__content-wrapper">
+        <li class="reviews__item reviews__item--reviews5">
+          <div class="reviews__content-wrap">
             <address class="reviews__author">Алексей Ткаченко</address>
             <blockquote class="reviews__quote">Вкусные бургеры , первый раз заказывали , привезли горячие был эффект Вау) последующие заказы уже не так, может дело в нас. Но доставка есть доставка хоть и быстрая, но остывают.</blockquote>
             <a class="button button--grey reviews__link" href="#">Подробнее</a>
           </div>
         </li>
-        <li class="reviews__item">
-          <picture class="reviews__picture">
-            <img class="reviews__img" src="img/reviews6.jpg" alt="Автор отзыва">
-          </picture>
-          <div class="reviews__content-wrapper">
+        <li class="reviews__item reviews__item--reviews6">
+          <div class="reviews__content-wrap">
             <address class="reviews__author">Даша Бойченко</address>
             <blockquote class="reviews__quote">Первый раз заказали доставку на дом, бургеры такие же вкусные как и в самом ресторане, в котором мы бывали уже не раз. Были небольшие проблемы с доставкой, но ресторан все быстро и грамотно урегулировал.</blockquote>
             <a class="button button--grey reviews__link" href="#">Подробнее</a>
           </div>
         </li>
-        <li class="reviews__item">
-          <picture class="reviews__picture">
-            <img class="reviews__img" src="img/reviews7.jpg" alt="Автор отзыва">
-          </picture>
-          <div class="reviews__content-wrapper">
+        <li class="reviews__item reviews__item--reviews7">
+          <div class="reviews__content-wrap">
             <address class="reviews__author">Максим Жарких</address>
             <blockquote class="reviews__quote">Здравствуйте. Хотелось, чтобы вы также клали в заказа к гамбургеру ещё перчатки. Также хотелось, чтобы салат заворачивали более плотнее, т.к бальзамический соус в прошлом заказе протек. Так все отлично.</blockquote>
             <a class="button button--grey reviews__link" href="#">Подробнее</a>
           </div>
         </li>
-        <li class="reviews__item">
-          <picture class="reviews__picture">
-            <img class="reviews__img" src="img/reviews8.jpg" alt="Автор отзыва">
-          </picture>
-          <div class="reviews__content-wrapper">
+        <li class="reviews__item reviews__item--reviews8">
+          <div class="reviews__content-wrap">
             <address class="reviews__author">Станислав Куралов</address>
             <blockquote class="reviews__quote">Бургеры "Блэк Пеппер" просто изумительны. Сочетание мяса и перца, грибов и лука просто классика... Картофельные дольки с фирменным соусом отличное дополнение к бургерам. Заказ доставляют очень оперативно, все свежее, горячее и вкусное... Рекомендую.</blockquote>
             <a class="button button--grey reviews__link" href="#">Подробнее</a>
@@ -207,7 +183,6 @@
         </li>
       </ul>
     </section>
-    <!-- Для пустого коммита -->
   </main>
 </body>
 

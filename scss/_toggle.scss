@@ -33,12 +33,12 @@
       margin-top: -3px;
       margin-left: -3px;
       border-radius: 50%;
-      background-color: #ffffff;
+      background-color: $white;
     }
 
     &--active,
     &:hover {
-      border: 1px solid #ffffff;
+      border: 1px solid $white;
     }
   }
 }

@@ -14,28 +14,26 @@
     width: 25%;
     height: 50vh;
     min-height: 325px;
-    color: #ffffff;
+    color: $white;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     overflow: hidden;
   }
 
-
-  &__img {
-    width: 100%;
-  }
-
-  &__content-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+  &__content-wrap {
     box-sizing: border-box;
     width: 100%;
     height: 100%;
-    padding: 50px 8.33%;
+    padding: 7.3%;
+    padding-top: 50px;
     background-color: rgba($color: #000000, $alpha: 0.6);
     opacity: 0;
-    transition: 0.4s;
+    transition: 0.5s;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 
   &__author {
@@ -57,6 +55,8 @@
   }
 }
 
-.reviews__item:hover .reviews__content-wrapper {
-  opacity: 1;
+@each $bg in (reviews1, reviews2, reviews3, reviews4, reviews5, reviews6, reviews7, reviews8) {
+  .reviews__item--#{$bg} {
+    background-image: url("../img/#{$bg}.jpg")
+  }
 }

@@ -3,6 +3,7 @@
   &__list {
     @include list-reset;
     display: flex;
+    flex-wrap: wrap;
     align-items: baseline;
   }
 
@@ -11,7 +12,7 @@
     margin-right: 15px;
     padding-right: 20px;
 
-    &:not(:nth-last-child(2))::after {
+    &:not(:last-child)::after {
       content: "";
       position: absolute;
       right: 0;
@@ -20,15 +21,11 @@
       height: 4px;
       margin-top: -2px;
       border-radius: 50%;
-      background-color: #ffffff;
+      background-color: $white;
     }
 
-    &:nth-last-child(2) {
+    &:last-child {
       padding-right: 0;
-    }
-
-    &--button {
-      margin-right: 0;
     }
   }
 
@@ -40,7 +37,7 @@
     }
 
     &:active {
-      color: rgba($color: #FFFFFF, $alpha: 0.5);
+      color: rgba($color: $white, $alpha: 0.5);
     }
   }
 }
