@@ -13,5 +13,8 @@
     "gulp": "^4.0.1",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5"
+  },
+  "dependencies": {
+    "tar": "^4.4.8"
   }
 }
