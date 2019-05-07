@@ -2,13 +2,14 @@
   @include section;
   position: relative;
   display: flex;
+  align-items: center;
+  align-content: center;
   background-color: #0b0e0e;
   background-image: url("../img/intro-bg.jpg");
 
   &__content-wrap {
     display: flex;
     justify-content: space-between;
-    margin: auto;
   }
 
   &__img-wrap {

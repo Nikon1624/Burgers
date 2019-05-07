@@ -12,6 +12,7 @@
 </head>
 
 <body>
+
   <nav class="toggle">
     <ul class="toggle__list">
       <li class="toggle__item">
@@ -43,6 +44,7 @@
       </li>
     </ul>
   </nav>
+
   <header class="header body__header">
     <a class="logo header__logo" href="index.html">
       <img class="logo__img" src="img/icons/logo.svg" alt="Логотип компании" width="92" height="69">
@@ -74,13 +76,16 @@
     </nav>
     <a class="button header__link" href="#">Заказать</a>
   </header>
+
   <main class="main">
     <h1 class="visually-hidden">Mr.Burger - заказ натуральных бургеров</h1>
-    <section class="intro">
+
+    <section class="intro webp">
       <div class="container intro__content-wrap">
         <h2 class="visually-hidden">Превью</h2>
         <div class="intro__img-wrap">
           <picture class="intro__picture">
+            <source type="image/webp" srcset="img/burger-intro1x.webp">
             <img class="intro__img" src="img/burger-intro1x.png" alt="Изображение бургера">
           </picture>
         </div>
@@ -91,7 +96,8 @@
         <a class="arrow intro__arrow" href="#" aria-label="Перейти к следующей секции сайта"></a>
       </div>
     </section>
-    <section class="advantages">
+
+    <section class="advantages webp">
       <div class="container advantages__content-wrapper">
         <h2 class="advantages__title">Мы лучшие</h2>
         <ul class="advantages__list">
@@ -100,28 +106,95 @@
               <img class="advantages__icon" src="img/icons/meat.svg" alt="Иконка мяса" width="97" height="89">
             </div>
             <h3 class="advantages__item-title">100% свежее мясо</h3>
-            <p class="advantages__desc">Драма представляет собой деструктивный цикл. Анапест представляет собой анапест.
-              Ямб неравномерен.</p>
+            <p class="advantages__desc">Лучшие котлеты из мраморной говядины высшего качества - один из главных секретов наших вкусных и сочных бургеров, сделанных с любовью и душой</p>
           </li>
           <li class="advantages__item">
             <div class="advantages__icon-wrapper">
               <img class="advantages__icon" src="img/icons/hand.svg" alt="Иконка ладони" width="73" height="85">
             </div>
             <h3 class="advantages__item-title">Ручная сборка</h3>
-            <p class="advantages__desc">Драма представляет собой деструктивный цикл. Анапест представляет собой анапест.
-              Первое полустишие притягивает сюжетный реформаторский пафос.</p>
+            <p class="advantages__desc">Все наши бургеры вручную собираются лучшими поварами из самых лучших ингредиентов, без использования замороженных продуктов или полуфабрикатов</p>
           </li>
           <li class="advantages__item">
             <div class="advantages__icon-wrapper">
               <img class="advantages__icon" src="img/icons/natural.svg" alt="Иконка листа" width="88" height="75">
             </div>
             <h3 class="advantages__item-title">Натуральные ингредиенты</h3>
-            <p class="advantages__desc">Драма представляет собой деструктивный цикл. Анапест представляет собой анапест.
+            <p class="advantages__desc">Все самое свежее и вкусное проходит термическую обработку и сразу же попадает к вам на стол - таким образом мы сохраняем весь вкус и пользу
             </p>
           </li>
         </ul>
       </div>
     </section>
+
+    <section class="team">
+      <div class="team__content-wrap">
+        <h2 class="team__title">Команда</h2>
+        <ul class="team__list">
+          <li class="team__item">
+            <h3 class="team__item-title">Дэниэл Редклиф</h3>
+            <div class="team__hidden">
+              <div class="team__img-wrap">
+                <picture class="team__picture">
+                  <source type="image/webp" srcset="img/team1.webp">
+                  <img class="team__img" src="img/team1.jpg" alt="Фотография Дэниэла">
+                </picture>
+              </div>
+              <div class="team__text">
+                <h4 class="team__item-subtitle">Шеф-повар</h4>
+                <p class="team__desc">Покажет вам, что значит настоящий сочный-мощный бургер из говядины</p>
+              </div>
+            </div>
+          </li>
+          <li class="team__item team__item--active">
+            <h3 class="team__item-title">Ричард Джеймс</h3>
+            <div class="team__hidden">
+              <div class="team__img-wrap">
+                <picture class="team__picture">
+                  <source type="image/webp" srcset="img/team2.webp">
+                  <img class="team__img" src="img/team2.jpg" alt="Фотография Дэниэла">
+                </picture>
+              </div>
+              <div class="team__text">
+                <h4 class="team__item-subtitle">Оператор</h4>
+                <p class="team__desc">С радостью поможет подобрать идеальный бургер и оформить заказ. </p>
+              </div>
+            </div>
+          </li>
+          <li class="team__item">
+            <h3 class="team__item-title">Джейк Финн</h3>
+            <div class="team__hidden">
+              <div class="team__img-wrap">
+                <picture class="team__picture">
+                  <source type="image/webp" srcset="img/team2.webp">
+                  <img class="team__img" src="img/team2.jpg" alt="Фотография Дэниэла">
+                </picture>
+              </div>
+              <div class="team__text">
+                <h4 class="team__item-subtitle">Оператор</h4>
+                <p class="team__desc">С радостью поможет подобрать идеальный бургер и оформить заказ. </p>
+              </div>
+            </div>
+          </li>
+          <li class="team__item">
+            <h3 class="team__item-title">Николай Иванов</h3>
+            <div class="team__hidden">
+              <div class="team__img-wrap">
+                <picture class="team__picture">
+                  <source type="image/webp" srcset="img/team2.webp">
+                  <img class="team__img" src="img/team2.jpg" alt="Фотография Дэниэла">
+                </picture>
+              </div>
+              <div class="team__text">
+                <h4 class="team__item-subtitle">Оператор</h4>
+                <p class="team__desc">С радостью поможет подобрать идеальный бургер и оформить заказ. </p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
     <section class="reviews">
       <h2 class="visually-hidden">Отзывы</h2>
       <ul class="reviews__list">
@@ -183,7 +256,14 @@
         </li>
       </ul>
     </section>
+
   </main>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="js/polyfill.js"></script>
+  <script src="js/modernizr-custom.js"></script>
+  <script src="js/script.js"></script>
+
 </body>
 
 </html>
