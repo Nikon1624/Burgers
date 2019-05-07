@@ -34,3 +34,10 @@
   font-weight: 500;
   color: $orange;
 }
+
+@mixin small-title {
+  font-family: $gagalin;
+  font-size: 14px;
+  line-height: 28px;
+  color: $white;
+}
