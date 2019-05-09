@@ -6,3 +6,9 @@ window.onload= function (){
     }
   });
 }
+
+let reviewLink = $('.reviews__link');
+let review = $('.reviews__hidden')
+reviewLink.focus(function() {
+  review.css('opacity', 1);
+});

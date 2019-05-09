@@ -7,7 +7,7 @@ var autoprefixer = require('autoprefixer');
 var webp = require('gulp-webp');
 
 gulp.task('sass', function () {
-  return gulp.src('source/scss/*.scss')
+  return gulp.src('source/scss/**/style.scss')
     .pipe(sourcemap.init())
     .pipe(sass())
     .pipe(postcss([
@@ -38,8 +38,8 @@ gulp.task('webp', function () {
 });
 
 gulp.task('watch', function () {
-  gulp.watch('source/scss/*.scss', gulp.parallel('sass'));
-  gulp.watch('source/scss/*.scss', gulp.parallel('browser-sync'));
+  gulp.watch('source/scss/**/*.scss', gulp.parallel('sass'));
+  gulp.watch('source/scss/**/*.scss', gulp.parallel('browser-sync'));
   gulp.watch(['source/img/**/*.png', 'source/img/**/*.jpg'], gulp.parallel('webp'));
 });
 

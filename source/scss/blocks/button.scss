@@ -1,0 +1,26 @@
+.button {
+  @extend %link;
+  display: inline-block;
+  padding: 0.2em 1.15em;
+  font-size: 0.8125em;
+  line-height: 2.3;
+  font-weight: 500;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 0.38em;
+  background-color: $orange;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: #c1401e;
+  }
+
+  &--grey {
+    background-color: $black;
+
+    &:hover {
+      background-color: #1f2122;
+    }
+  }
+}
