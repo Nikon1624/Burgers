@@ -7,8 +7,14 @@ window.onload= function (){
   });
 }
 
-let reviewLink = $('.reviews__link');
-let review = $('.reviews__hidden')
-reviewLink.focus(function() {
-  review.css('opacity', 1);
-});
+let reviewLink = document.querySelectorAll('.reviews__link');
+
+for (var i = 0; i < reviewLink.length; i++) {
+  reviewLink[i].addEventListener('focus', function() {
+    this.parentNode.style.opacity = '1';
+  });
+
+  reviewLink[i].addEventListener('blur', function() {
+    this.parentNode.style.opacity = '0';
+  });
+}
