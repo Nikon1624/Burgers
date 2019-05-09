@@ -5,7 +5,7 @@
   z-index: 1;
 
   &__list {
-    @include list-reset;
+    @extend %list-reset;
   }
 
   &__item {
@@ -33,12 +33,12 @@
       margin-top: -3px;
       margin-left: -3px;
       border-radius: 50%;
-      background-color: $white;
+      background-color: #ffffff;
     }
 
     &--active,
     &:hover {
-      border: 1px solid $white;
+      border: 1px solid #ffffff;
     }
   }
 }

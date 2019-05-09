@@ -1,0 +1,8 @@
+.small-title {
+  @include indents-reset;
+  font-family: $gagalin;
+  font-size: 0.875em;
+  line-height: 2;
+  font-weight: 500;
+  color: #ffffff;
+}

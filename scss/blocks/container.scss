@@ -4,4 +4,10 @@
   max-width: 960px;
   margin: 0 auto;
   padding: 0 10px;
+
+  &--intro {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
 }
