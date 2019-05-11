@@ -1,0 +1,12 @@
+.title {
+  @include indents-reset;
+  font-family: $gagalin;
+  font-size: 4.5em;
+  line-height: 1.18;
+  font-weight: 500;
+  color: $yellow;
+
+  &--black {
+    color: $black;
+  }
+}

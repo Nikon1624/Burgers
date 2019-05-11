@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  align-items: center;
+  padding: 13px 0;
+}
+
+.header__logo {
+  flex-shrink: 0;
+  margin-right: 3%;
+}
+
+.header__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: auto;
+  margin-top: -4px;
+}
+
+.header__link {
+  margin-left: 1.15em;
+}

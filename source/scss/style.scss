@@ -1,15 +1,30 @@
 @import "variables";
 @import "mixins";
+@import "normalize";
 @import "font";
-@import "base";
 @import "visually-hidden";
-@import "container";
-@import "intro";
-@import "header";
-@import "nav";
-@import "button";
-@import "slogan";
-@import "toggle";
-@import "arrow";
-@import "advantages";
-@import "reviews";
+@import "scaffolding";
+@import "./blocks/container";
+@import "./blocks/section";
+@import "./blocks/intro";
+@import "./blocks/header";
+@import "./blocks/main-nav";
+@import "./blocks/button";
+@import "./blocks/title";
+@import "./blocks/small-title";
+@import "./blocks/arrow";
+@import "./blocks/toggle";
+@import "./blocks/advantages";
+@import "./blocks/reviews";
+
+
+
+
+
+
+
+
+
+
+
+

@@ -5,7 +5,7 @@
   z-index: 1;
 
   &__list {
-    @include list-reset;
+    @extend %list-reset;
   }
 
   &__item {
