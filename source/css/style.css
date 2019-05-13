@@ -604,7 +604,6 @@ img {
 .advantages {
   display: flex;
   align-items: center;
-  justify-content: center;
   text-align: center;
   background-color: #f3eeea; }
 
@@ -759,6 +758,7 @@ img {
   height: 100%;
   margin-left: calc(50% + 10px);
   padding: 95px 10.1%;
+  padding-right: 0;
   background-color: rgba(47, 50, 52, 0.93); }
 
 .team__title {
@@ -773,7 +773,10 @@ img {
 .team__item-title {
   position: relative;
   padding-left: 20px;
-  cursor: pointer; }
+  cursor: pointer;
+  transition: 0.4s; }
+  .team__item-title:hover {
+    color: #f9b43b; }
   .team__item-title::before {
     content: "";
     position: absolute;
@@ -818,7 +821,8 @@ img {
   height: auto; }
 
 .team__item--active .team__item-title {
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  color: #f9b43b; }
   .team__item--active .team__item-title::before {
     -webkit-transform: rotate(180deg);
             transform: rotate(180deg); }

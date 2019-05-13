@@ -16,6 +16,7 @@
   height: 100%;
   margin-left: calc(50% + 10px);
   padding: 95px 10.1%;
+  padding-right: 0;
   background-color: rgba($color: $black, $alpha: 0.93);
 }
 
@@ -36,6 +37,11 @@
   position: relative;
   padding-left: 20px;
   cursor: pointer;
+  transition: 0.4s;
+
+  &:hover {
+    color: $yellow;
+  }
 
   &::before {
     content: "";
@@ -89,6 +95,7 @@
 
   .team__item-title {
     margin-bottom: 1rem;
+    color: $yellow;
 
     &::before {
       transform: rotate(180deg);
