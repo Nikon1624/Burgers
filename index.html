@@ -50,7 +50,10 @@
       <div class="container container--intro">
         <header class="header intro__header">
           <a class="logo header__logo" href="#">
-            <img class="logo__img" src="./img/icons/logo.svg" alt="Логотип" width="92" height="69">
+            <svg class="logo__img" width="92" height="69" role="img">
+              <title>Логотип</title>
+              <use xlink:href="./img/svg-sprite.svg#logo"></use>
+            </svg>
           </a>
           <div class="header__buttons">
             <nav class="main-nav header__nav">
@@ -103,7 +106,9 @@
         <ul class="advantages__list">
           <li class="advantages__item">
             <div class="advantages__img-wrapper">
-              <img class="advantages__img" src="./img/icons/meat.svg" alt="Изображение окорока" width="97" height="89">
+              <svg class="advantages__img" width="97" height="89" role="presentation" aria-hidden="true">
+                <use xlink:href="./img/svg-sprite.svg#meat"></use>
+              </svg>
             </div>
             <h3 class="advantages__item-title">100% свежее мясо</h3>
             <p class="advantages__desc">Лучшие котлеты из мраморной говядины высшего качества - один из главных секретов
@@ -111,7 +116,9 @@
           </li>
           <li class="advantages__item">
             <div class="advantages__img-wrapper">
-              <img src="./img/icons/hand.svg" alt="Изображение ладони" class="advantages__img" width="73" height="85">
+              <svg class="advantages__img" width="73" height="85" role="presentation" aria-hidden="true">
+                <use xlink:href="./img/svg-sprite.svg#hand"></use>
+              </svg>
             </div>
             <h3 class="advantages__item-title">Ручная сборка</h3>
             <p class="advantages__desc">Все наши бургеры вручную собираются лучшими поварами из самых лучших
@@ -119,8 +126,9 @@
           </li>
           <li class="advantages__item">
             <div class="advantages__img-wrapper">
-              <img src="./img/icons/natural.svg" alt="Изображение окорока" class="advantages__img" width="88"
-                height="75">
+              <svg class="advantages__img" width="88" height="75" role="presentation" aria-hidden="true">
+                <use xlink:href="./img/svg-sprite.svg#natural"></use>
+              </svg>
             </div>
             <h3 class="advantages__item-title">Натуральные ингредиенты</h3>
             <p class="advantages__desc">Все самое свежее и вкусное проходит термическую обработку и сразу же попадает к
@@ -279,6 +287,7 @@
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="./js/polyfill.js"></script>
+  <script src="./js/svgxuse.js"></script>
   <script src="./js/modernizr-custom.js"></script>
   <script src="./js/script.js"></script>
 
