@@ -8,3 +8,15 @@
   background-position: center;
   overflow: hidden;
 }
+
+@media (max-width: 960px) {
+  .section {
+    min-height: 1024px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    min-height: 800px;
+  }
+}

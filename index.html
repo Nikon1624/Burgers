@@ -49,7 +49,7 @@
       <h2 class="visually-hidden">Стартовая секция</h2>
       <div class="container container--intro">
         <header class="header intro__header">
-          <a class="logo header__logo" href="#">
+          <a class="logo header__logo" href="index.html">
             <svg class="logo__img" width="92" height="69" role="img">
               <title>Логотип</title>
               <use xlink:href="./img/svg-sprite.svg#logo"></use>
@@ -57,6 +57,7 @@
           </a>
           <div class="header__buttons">
             <nav class="main-nav header__nav">
+              <button class="main-nav__toggle" type="button" aria-label="Открыть/закрыть меню"></button>
               <ul class="main-nav__list">
                 <li class="main-nav__item">
                   <a class="main-nav__link" href="#">О нас</a>
@@ -110,9 +111,10 @@
                 <use xlink:href="./img/svg-sprite.svg#meat"></use>
               </svg>
             </div>
-            <h3 class="advantages__item-title">100% свежее мясо</h3>
-            <p class="advantages__desc">Лучшие котлеты из мраморной говядины высшего качества - один из главных секретов
-              наших вкусных и сочных бургеров, сделанных с любовью и душой</p>
+            <div class="advantages__desc-wrapper">
+              <h3 class="advantages__item-title">100% свежее мясо</h3>
+              <p class="advantages__desc">Лучшие котлеты из мраморной говядины высшего качества - один из главных секретов наших вкусных и сочных бургеров, сделанных с любовью и душой</p>
+            </div>
           </li>
           <li class="advantages__item">
             <div class="advantages__img-wrapper">
@@ -120,9 +122,10 @@
                 <use xlink:href="./img/svg-sprite.svg#hand"></use>
               </svg>
             </div>
-            <h3 class="advantages__item-title">Ручная сборка</h3>
-            <p class="advantages__desc">Все наши бургеры вручную собираются лучшими поварами из самых лучших
-              ингредиентов, без использования замороженных продуктов или полуфабрикатов</p>
+            <div class="advantages__desc-wrapper">
+              <h3 class="advantages__item-title">Ручная сборка</h3>
+              <p class="advantages__desc">Все наши бургеры вручную собираются лучшими поварами из самых лучших ингредиентов, без использования замороженных продуктов или полуфабрикатов</p>
+            </div>
           </li>
           <li class="advantages__item">
             <div class="advantages__img-wrapper">
@@ -130,9 +133,10 @@
                 <use xlink:href="./img/svg-sprite.svg#natural"></use>
               </svg>
             </div>
-            <h3 class="advantages__item-title">Натуральные ингредиенты</h3>
-            <p class="advantages__desc">Все самое свежее и вкусное проходит термическую обработку и сразу же попадает к
-              вам на стол - таким образом мы сохраняем весь вкус и пользу</p>
+            <div class="advantages__desc-wrapper">
+              <h3 class="advantages__item-title">Натуральные ингредиенты</h3>
+              <p class="advantages__desc">Все самое свежее и вкусное проходит термическую обработку и сразу же попадает к вам на стол - таким образом мы сохраняем весь вкус и пользу</p>
+            </div>
           </li>
         </ul>
       </div>

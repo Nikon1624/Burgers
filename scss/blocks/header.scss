@@ -6,7 +6,7 @@
 
 .header__logo {
   flex-shrink: 0;
-  margin-right: 3%;
+  margin-right: 2%;
 }
 
 .header__buttons {
@@ -18,5 +18,17 @@
 }
 
 .header__link {
-  margin-left: 1.15em;
+  margin-left: 16px;
+}
+
+@media (max-width: 960px) {
+  .header__logo {
+    position: relative;
+    z-index: 2;
+  }
+
+  .header__link {
+    margin-left: 0;
+    margin-right: 25px;
+  }
 }

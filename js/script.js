@@ -18,3 +18,12 @@ for (var i = 0; i < reviewLink.length; i++) {
     this.parentNode.style.opacity = '0';
   });
 }
+
+var toggle = $('.main-nav__toggle');
+var menu = $('.main-nav__list');
+
+toggle.click(function(event) {
+  toggle.toggleClass('main-nav__toggle--active');
+  menu.toggleClass('main-nav__list--active');
+});
+

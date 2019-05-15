@@ -16,6 +16,7 @@
   color: #ffffff;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 
 @each $bg in (reviews1, reviews2, reviews3, reviews4, reviews5, reviews6, reviews7, reviews8) {
@@ -33,10 +34,11 @@
 .reviews__hidden {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   box-sizing: border-box;
   width: 100%;
   height: 100%;
-  padding: 50px 8%;
+  padding: 0 8%;
   background-color: rgba($color: #000000, $alpha: 0.6);
   opacity: 0;
   transition: 0.5s;
@@ -47,20 +49,44 @@
 }
 
 .reviews__item-title {
-  margin-bottom: 1.25rem;
+  margin-bottom: 20px;
 }
 
 .reviews__text {
   @include indents-reset;
-  max-height: 53%;
-  margin-bottom: 1rem;
-  font-size: 0.875em;
+  max-height: 55%;
+  margin-bottom: 16px;
   line-height: 1.71;
   font-weight: 300;
   overflow: hidden;
 }
 
 .reviews__link {
-  margin-top: auto;
   align-self: flex-start;
+}
+
+@media (max-width: 960px) {
+  .reviews__item {
+    width: 50%;
+    height: 25%;
+    text-align: center;
+  }
+
+  .reviews__hidden {
+    align-items: center;
+  }
+
+  .reviews__item-title {
+    margin-bottom: 10px;
+  }
+
+  .reviews__link {
+    align-self: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .reviews__text {
+    display: none;
+  }
 }

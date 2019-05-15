@@ -1,12 +1,19 @@
 .title {
   @include indents-reset;
   font-family: $gagalin;
-  font-size: 4.5em;
+  font-size: 5.1428rem;
   line-height: 1.18;
   font-weight: 500;
   color: $yellow;
 
   &--black {
     color: $black;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 3.5714rem;
+    line-height: 1.2;
   }
 }
