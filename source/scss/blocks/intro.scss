@@ -39,7 +39,7 @@
 
 .intro__lead-text {
   font-family: $lifehack;
-  font-size: 4.0625em;
+  font-size: 4.6428rem;
   line-height: 1;
   font-weight: 500;
   color: #ffffff;
@@ -65,3 +65,45 @@
     transform: translateY(10px);
   }
 }
+
+@media (max-width: 960px) {
+  .intro__content-wrapper {
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 65.277%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .intro__img-wrapper {
+    width: 100%;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 25px;
+  }
+
+  .intro__text-wrapper {
+    width: 100%;
+    padding-top: 0;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .intro__content-wrapper {
+    width: 100%;
+    margin: 0;
+  }
+
+  .intro__lead-title {
+    font-size: 4.5rem;
+    line-height: 1;
+  }
+
+  .intro__lead-text {
+    font-size: 3.8571rem;
+    line-height: 1.11;
+  }
+}
+
+
