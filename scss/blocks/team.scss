@@ -81,7 +81,9 @@
 
 .team__hidden-title {
   @include indents-reset;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 .team__desc {
@@ -95,7 +97,7 @@
   }
 
   .team__item-title {
-    margin-bottom: 16px;
+    margin-bottom: 10px;
     color: $yellow;
 
     &::before {
