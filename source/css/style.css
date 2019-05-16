@@ -419,6 +419,27 @@ img {
   .section {
     min-height: 800px; } }
 
+.title {
+  margin: 0;
+  padding: 0;
+  font-family: "Gagalin", "Arial", sans-serif;
+  font-size: 5.1428rem;
+  line-height: 1.18;
+  font-weight: 500;
+  color: #f9b43b; }
+  .title--black {
+    color: #2f3234; }
+  .title--white {
+    color: #ffffff; }
+  .title--medium {
+    font-size: 2.8571rem;
+    line-height: 1.6; }
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 3.5714rem;
+    line-height: 1.2; } }
+
 .intro {
   position: relative;
   background-color: #2f3234; }
@@ -534,7 +555,7 @@ img {
   margin-top: -4px; }
 
 .header__link {
-  margin-left: 16px; }
+  margin-left: 15px; }
 
 @media (max-width: 960px) {
   .header__logo {
@@ -552,8 +573,8 @@ img {
 
 .main-nav__item {
   position: relative;
-  margin-right: 16px;
-  padding-right: 21px;
+  margin-right: 15px;
+  padding-right: 20px;
   font-size: 0.9286rem;
   line-height: 2.3;
   font-weight: 500;
@@ -672,27 +693,6 @@ img {
     background-color: #2f3234; }
     .button--grey:hover {
       background-color: #1f2122; }
-
-.title {
-  margin: 0;
-  padding: 0;
-  font-family: "Gagalin", "Arial", sans-serif;
-  font-size: 5.1428rem;
-  line-height: 1.18;
-  font-weight: 500;
-  color: #f9b43b; }
-  .title--black {
-    color: #2f3234; }
-  .title--white {
-    color: #ffffff; }
-  .title--medium {
-    font-size: 2.8571rem;
-    line-height: 1.6; }
-
-@media (max-width: 768px) {
-  .title {
-    font-size: 3.5714rem;
-    line-height: 1.2; } }
 
 .small-title {
   margin: 0;
@@ -993,7 +993,9 @@ img {
 .team__hidden-title {
   margin: 0;
   padding: 0;
-  margin-bottom: 16px; }
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.5; }
 
 .team__desc {
   margin: 0;
@@ -1003,7 +1005,7 @@ img {
   height: auto; }
 
 .team__item--active .team__item-title {
-  margin-bottom: 16px;
+  margin-bottom: 10px;
   color: #f9b43b; }
   .team__item--active .team__item-title::before {
     -webkit-transform: rotate(180deg);
@@ -1207,7 +1209,10 @@ img {
     display: block; } }
 
 .contacts {
-  position: relative; }
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; }
 
 .contacts.webp {
   background-image: url("../img/map.webp"); }
