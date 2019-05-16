@@ -38,7 +38,6 @@
 .team__item-title {
   position: relative;
   padding-left: 20px;
-  cursor: pointer;
   transition: 0.4s;
 
   &:hover {
@@ -99,7 +98,6 @@
     color: $yellow;
 
     &::before {
-      transform-origin: 50% 0;
       transform: rotate(180deg);
     }
   }
@@ -129,6 +127,7 @@
       display: inline-block;
       position: static;
       margin-right: 10px;
+      transform-origin: 50% 0;
     }
   }
 

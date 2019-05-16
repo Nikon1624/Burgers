@@ -20,10 +20,9 @@ for (var i = 0; i < reviewLink.length; i++) {
 }
 
 var toggle = $('.main-nav__toggle');
-var menu = $('.main-nav__list');
+var mainMenu = $('.main-nav__list');
 
 toggle.click(function(event) {
   toggle.toggleClass('main-nav__toggle--active');
-  menu.toggleClass('main-nav__list--active');
+  mainMenu.toggleClass('main-nav__list--active');
 });
-

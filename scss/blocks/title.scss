@@ -9,6 +9,15 @@
   &--black {
     color: $black;
   }
+
+  &--white {
+    color: #ffffff;
+  }
+
+  &--medium {
+    font-size: 2.8571rem;
+    line-height: 1.6;
+  }
 }
 
 @media (max-width: 768px) {
