@@ -1,0 +1,22 @@
+.social {
+  @extend %list-reset;
+  display: flex;
+  align-items: center;
+}
+
+.social__item {
+  margin-right: 20px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.social__icon {
+  fill: rgba($color: #ffffff, $alpha: 0.3);
+  transition: 0.3s;
+
+  &:hover {
+    fill: #ffffff;
+  }
+}
