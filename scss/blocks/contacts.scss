@@ -1,0 +1,18 @@
+.contacts {
+  position: relative;
+}
+
+.contacts.webp {
+  background-image: url("../img/map.webp");
+}
+
+.contacts.no-webp {
+  background-image: url("../img/map.jpg");
+}
+
+.contacts__footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
