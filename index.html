@@ -343,6 +343,80 @@
       </ul>
     </section>
 
+    <section class="section delivery webp">
+      <div class="container delivery__container">
+        <h2 class="title delivery__title">Закажите доставку</h2>
+        <form class="delivery__form" action="#" method="POST">
+          <fieldset class="form__column form__column--left">
+            <legend class="visually-hidden">Основная информация</legend>
+            <div class="form__row">
+              <div class="form__field-wrapper form__field-wrapper--medium">
+                <label class="form__label" for="name">Имя</label>
+                <input class="form__input" id="name" name="name" type="text" required>
+              </div>
+              <div class="form__field-wrapper form__field-wrapper--medium">
+                <label class="form__label" for="tel">Телефон</label>
+                <input class="form__input" id="tel" name="tel" type="tel" required>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="form__field-wrapper">
+                <label class="form__label" for="street">Улица</label>
+                <input class="form__input" id="street" name="street" type="text" required>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="form__field-wrapper form__field-wrapper--small">
+                <label class="form__label" for="house">Дом</label>
+                <input class="form__input form__input--small" id="house" name="house" type="text" required>
+              </div>
+              <div class="form__field-wrapper form__field-wrapper--small">
+                <label class="form__label" for="housing">Корпус</label>
+                <input class="form__input form__input--small" id="housing" name="housing" type="text" required>
+              </div>
+              <div class="form__field-wrapper form__field-wrapper--small">
+                <label class="form__label" for="apartment">Квартира</label>
+                <input class="form__input form__input--small" id="apartment" name="apartment" type="text" required>
+              </div>
+              <div class="form__field-wrapper form__field-wrapper--small form__field-wrapper--floor">
+                <label class="form__label" for="floor">Этаж</label>
+                <input class="form__input form__input--small" id="floor" name="floor" type="text">
+              </div>
+            </div>
+          </fieldset>
+          <fieldset class="form__column form__column--right">
+            <legend class="visually-hidden">Дополнительная информация</legend>
+            <div class="form__row form__row--comment">
+              <div class="form__field-wrapper form__field-wrapper--comment">
+                <label class="form__label" for="comment">Комментарий</label>
+                <textarea class="form__input form__input--comment" name="comment" id="comment"></textarea>
+              </div>
+            </div>
+            <div class="form__row form__row--payment">
+              <div class="form__payment-wrapper">
+                <input class="form__radio visually-hidden" id="cash" name="payment" value="cash" type="radio">
+                <label class="form__label form__label--radio" for="cash">Потребуется сдача</label>
+              </div>
+              <div class="form__payment-wrapper">
+                <input class="form__radio visually-hidden" id="card" name="payment" value="card" type="radio" checked>
+                <label class="form__label form__label--radio" for="card">Оплата по карте</label>
+              </div>
+            </div>
+            <div class="form__row form__row--call">
+              <div class="form__call-wrapper">
+                <input class="form__checkbox visually-hidden" id="call" name="call" type="checkbox" checked>
+                <label class="form__label form__label--checkbox" for="call">Не перезванивать</label>
+              </div>
+            </div>
+            <div class="form__row form__row--buttons">
+              <button class="button form__submit">Заказать</button>
+              <button class="form__reset" type="reset">Очистить</button>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </section>
+
     <section class="section contacts webp">
       <h2 class="visually-hidden">Контакты</h2>
       <footer class="footer contacts__footer webp">
