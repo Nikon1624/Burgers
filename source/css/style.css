@@ -539,6 +539,10 @@ img {
     font-size: 3.8571rem;
     line-height: 1.11; } }
 
+@media (max-width: 380px) {
+  .intro__lead-text {
+    font-size: 3rem; } }
+
 .header {
   display: flex;
   align-items: center;
@@ -800,6 +804,8 @@ img {
   color: #2f3234; }
 
 @media (max-width: 768px) {
+  .advantages__title {
+    margin-bottom: 20px; }
   .advantages__list {
     flex-direction: column;
     justify-content: flex-start;
@@ -809,7 +815,7 @@ img {
   .advantages__item {
     display: flex;
     width: 100%;
-    margin-bottom: 35px; }
+    margin-bottom: 25px; }
   .advantages__img-wrapper {
     flex-shrink: 0;
     width: 131px;

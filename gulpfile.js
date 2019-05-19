@@ -34,7 +34,7 @@ gulp.task('browser-sync', function () {
 gulp.task('webp', function () {
   return gulp.src(['source/img/**/*.png', 'source/img/**/*.jpg'])
     .pipe(webp({
-      quality: 90
+      quality: 85
     }))
     .pipe(gulp.dest('source/img'))
 });
