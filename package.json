@@ -12,12 +12,18 @@
     "autoprefixer": "^9.5.1",
     "browser-sync": "^2.26.5",
     "gulp": "^4.0.1",
+    "gulp-cheerio": "^0.6.3",
+    "gulp-cheerio-clean-svg": "github:Hiswe/gulp-cheerio-clean-svg",
     "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
+    "gulp-svgstore": "^7.0.1",
     "gulp-webp": "^4.0.1"
   },
   "dependencies": {
+    "gulp-concat": "^2.6.1",
     "tar": "^4.4.8"
   }
 }
