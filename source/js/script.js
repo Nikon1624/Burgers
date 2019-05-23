@@ -26,3 +26,16 @@ toggle.click(function(event) {
   toggle.toggleClass('main-nav__toggle--active');
   mainMenu.toggleClass('main-nav__list--active');
 });
+
+var teamItems = document.querySelectorAll('.team__item');
+
+var teamItemClick = function(teamItem) {
+  teamItem.addEventListener('click', function(evt) {
+    evt.preventDefault();
+    teamItem.classList.toggle('team__item--active');
+  });
+};
+
+for (var i = 0; i < teamItems.length; i++) {
+  teamItemClick(teamItems[i]);
+}

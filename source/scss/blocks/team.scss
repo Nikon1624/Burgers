@@ -28,6 +28,7 @@
 
 .team__list {
   @extend %list-reset;
+  height: 322px;
   color: #ffffff;
 }
 
@@ -58,6 +59,7 @@
     border-right-color: transparent;
     border-left-width: 5px;
     border-right-width: 5px;
+    transition: 0.4s;
   }
 }
 
@@ -67,6 +69,9 @@
   overflow: hidden;
   padding-left: 20px;
   line-height: 1.71;
+  transform-origin: 50% 0;
+  transform: scaleY(0);
+  transition: 0.4s;
 }
 
 .team__img-wrapper {
@@ -94,6 +99,7 @@
 
   .team__hidden {
     height: auto;
+    transform: scaleY(1);
   }
 
   .team__item-title {
