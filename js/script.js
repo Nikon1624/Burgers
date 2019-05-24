@@ -39,3 +39,33 @@ var teamItemClick = function(teamItem) {
 for (var i = 0; i < teamItems.length; i++) {
   teamItemClick(teamItems[i]);
 }
+
+var burgerList = document.querySelector('.burgers__list');
+var burgersButtonRight = document.querySelector('.burgers__control--right');
+var burgersButtonLeft = document.querySelector('.burgers__control--left');
+var burgerListLength = burgerList.children.length;
+var translate = 0;
+var maxTranslate = -100 * (burgerListLength - 1);
+
+burgersButtonRight.addEventListener('click', function() {
+  if (translate != maxTranslate) {
+    translate -= 100;
+    burgerList.style.transform = 'translateX(' + translate + '%)';
+  }
+});
+
+burgersButtonLeft.addEventListener('click', function() {
+  if (translate != 0) {
+    translate += 100;
+    burgerList.style.transform = 'translateX(' + translate + '%)';
+  }
+});
+
+var burgersCloseButton = burgerList.querySelector('.burgers__consist-button');
+var consistList = burgerList.querySelector('.burgers__consist-list');
+
+burgersCloseButton.addEventListener('click', function() {
+  consistList.style.opacity = '0';
+  consistList.style.transform = 'scaleY(0)';
+});
+
