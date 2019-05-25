@@ -29,15 +29,20 @@ toggle.click(function(event) {
 
 var teamItems = document.querySelectorAll('.team__item');
 
-var teamItemClick = function(teamItem) {
-  teamItem.addEventListener('click', function(evt) {
+var accordeonTeam = function(item, collection) {
+  item.children[0].addEventListener('click', function(evt) {
     evt.preventDefault();
-    teamItem.classList.toggle('team__item--active');
+    item.classList.toggle('team__item--active');
+    for (var i = 0; i < collection.length; i++) {
+      if (collection[i] != item) {
+        collection[i].classList.remove('team__item--active');
+      }
+    }
   });
 };
 
 for (var i = 0; i < teamItems.length; i++) {
-  teamItemClick(teamItems[i]);
+  accordeonTeam(teamItems[i], teamItems);
 }
 
 var burgerList = document.querySelector('.burgers__list');
@@ -51,12 +56,18 @@ burgersButtonRight.addEventListener('click', function() {
   if (translate != maxTranslate) {
     translate -= 100;
     burgerList.style.transform = 'translateX(' + translate + '%)';
+  } else {
+    translate = 0;
+    burgerList.style.transform = 'translateX(' + translate + '%)';
   }
 });
 
 burgersButtonLeft.addEventListener('click', function() {
   if (translate != 0) {
     translate += 100;
+    burgerList.style.transform = 'translateX(' + translate + '%)';
+  } else {
+    translate = maxTranslate;
     burgerList.style.transform = 'translateX(' + translate + '%)';
   }
 });
@@ -68,4 +79,22 @@ burgersCloseButton.addEventListener('click', function() {
   consistList.style.opacity = '0';
   consistList.style.transform = 'scaleY(0)';
 });
+
+var menuItems = document.querySelectorAll('.menu__item');
+
+var accordeonMenu = function(item, collection) {
+  item.children[0].addEventListener('click', function(evt) {
+    evt.preventDefault();
+    item.classList.toggle('menu__item--active');
+    for (var i = 0; i < collection.length; i++) {
+      if (collection[i] != item) {
+        collection[i].classList.remove('menu__item--active');
+      }
+    }
+  });
+};
+
+for (var i = 0; i < menuItems.length; i++) {
+  accordeonMenu(menuItems[i], menuItems);
+}
 
