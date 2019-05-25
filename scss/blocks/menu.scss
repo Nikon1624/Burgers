@@ -1,7 +1,7 @@
 .menu {
   position: relative;
   padding-top: 130px;
-  //background-color: #b7936a;
+  background-color: #b7936a;
 }
 
 .menu.webp {
@@ -92,10 +92,11 @@
 }
 
 .menu__desc-wrapper {
+  position: relative;
   box-sizing: border-box;
   max-width: 0;
+  padding: 50px 0;
   overflow: hidden;
-  position: relative;
   background-color: rgba($color: $black, $alpha: 0.93);
   transition: 0.5s;
 }
@@ -145,13 +146,16 @@
   }
 }
 
-.menu__desc-wrapper--active {
-  max-width: 540px;
-  padding: 50px 5.55%;
-}
+.menu__item--active {
 
-.menu__item-title--active {
-  color: $yellow;
+  .menu__desc-wrapper {
+    max-width: 540px;
+    padding: 50px 5.55%;
+  }
+
+  .menu__item-title {
+    color: $yellow;
+  }
 }
 
 @media (max-width: 960px) {
@@ -177,15 +181,13 @@
     min-height: 800px;
   }
 
-  .menu__item:not(.menu__item--active) {
-    width: 0;
-    overflow: hidden;
-  }
+  .menu__item--active {
 
-  .menu__desc-wrapper--active {
+    .menu__desc-wrapper {
 
-    .menu__button-close {
-      display: block;
+      .menu__button-close {
+        display: block;
+      }
     }
   }
 }
