@@ -11,20 +11,23 @@ let reviewLink = document.querySelectorAll('.reviews__link');
 
 for (var i = 0; i < reviewLink.length; i++) {
   reviewLink[i].addEventListener('focus', function() {
-    this.parentNode.style.opacity = '1';
+    this.parentNode.classList.add('show-review');
   });
 
   reviewLink[i].addEventListener('blur', function() {
-    this.parentNode.style.opacity = '0';
+    this.parentNode.classList.remove('show-review');
   });
 }
 
 var toggle = $('.main-nav__toggle');
 var mainMenu = $('.main-nav__list');
+var body = $('body');
 
-toggle.click(function(event) {
+toggle.click(function(evt) {
+  evt.preventDefault();
   toggle.toggleClass('main-nav__toggle--active');
   mainMenu.toggleClass('main-nav__list--active');
+  body.toggleClass('hidden');
 });
 
 var teamItems = document.querySelectorAll('.team__item');
