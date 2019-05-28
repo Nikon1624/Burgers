@@ -1508,6 +1508,7 @@ img {
 .menu__desc-wrapper p {
   margin: 0;
   padding: 0;
+  opacity: 0;
 }
 
 .menu__button-close {
@@ -1560,12 +1561,41 @@ img {
   padding: 50px 5.55%;
 }
 
+.menu__item--active .menu__desc-wrapper p {
+  -webkit-animation-name: showMenuText;
+          animation-name: showMenuText;
+  -webkit-animation-duration: 0.7s;
+          animation-duration: 0.7s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
 .menu__item--active .menu__item-title {
   color: #f9b43b;
 }
 
 .menu__button:hover .menu__item-title {
   color: #f9b43b;
+}
+
+@-webkit-keyframes showMenuText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes showMenuText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 960px) {

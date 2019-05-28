@@ -45,16 +45,21 @@ toggle.click(function(evt) {
 var teamList = document.querySelector('.team__list');
 var teamItems = teamList.querySelectorAll('.team__item');
 
+function addActiveClass(item, itemsCollection, activeClass) {
+  for (var i = 0; i < itemsCollection.length; i++) {
+    if (itemsCollection[i] != item.parentNode) {
+      itemsCollection[i].classList.remove(activeClass);
+    }
+  }
+  item.parentNode.classList.toggle(activeClass);
+}
+
+
 teamList.addEventListener('click', function(evt) {
   var target = evt.target;
   if (target.classList.contains('team__item-title')) {
     evt.preventDefault();
-    for (var i = 0; i < teamItems.length; i++) {
-      if (teamItems[i] != target.parentNode) {
-        teamItems[i].classList.remove('team__item--active');
-      }
-    }
-    target.parentNode.classList.toggle('team__item--active');
+    addActiveClass(target, teamItems, 'team__item--active');
   }
 });
 
@@ -90,50 +95,45 @@ if (window.innerWidth < 960) {
   var sliderList = document.querySelector('.slider__list');
   sliderList.addEventListener('click', function(evt) {
     var target = evt.target;
-    console.log(target.getAttribute('class'));
-    if (target.getAttribute('class') == 'consist__preview') {
-      target.nextElementSibling.classList.add('consist__list--show');
-    }
-    if (target.classList.contains('consist__close')) {
-      target.parentNode.classList.remove('consist__list--show');
+    while (target != this) {
+      if (target.classList.contains('consist__preview')) {
+        target.nextElementSibling.classList.add('consist__list--show');
+      }
+      if (target.classList.contains('consist__close')) {
+        target.parentNode.classList.remove('consist__list--show');
+      }
+      target = target.parentNode;
     }
   });
 }
 
+// Секция Меню
+var menuList = document.querySelector('.menu__list');
 var menuItems = document.querySelectorAll('.menu__item');
 
-var accordeonMenu = function(item, collection) {
-  item.children[0].addEventListener('click', function(evt) {
-    evt.preventDefault();
-    item.classList.toggle('menu__item--active');
-    for (var i = 0; i < collection.length; i++) {
-      if (collection[i] != item) {
-        collection[i].classList.remove('menu__item--active');
-        collection[i].classList.toggle('menu__item--hidden');
+menuList.addEventListener('click', function(evt) {
+  var target = evt.target;
+  while (target != this) {
+    if (target.classList.contains('menu__button')) {
+      evt.preventDefault();
+      addActiveClass(target, menuItems, 'menu__item--active');
+      for (var i = 0; i < menuItems.length; i++) {
+        if (menuItems[i] != target.parentNode) {
+          menuItems[i].classList.toggle('menu__item--hidden');
+        }
       }
     }
-  });
-};
-
-for (var i = 0; i < menuItems.length; i++) {
-  accordeonMenu(menuItems[i], menuItems);
-}
-
-var closeMenuItem = document.querySelectorAll('.menu__button-close');
-
-var closeMenu = function(item) {
-  item.addEventListener('click', function(evt) {
-    evt.preventDefault();
-    item.parentNode.parentNode.classList.remove('menu__item--active');
-    for (var i = 0; i < menuItems.length; i++) {
-      menuItems[i].classList.remove('menu__item--hidden');
+    if (target.classList.contains('menu__button-close')) {
+      target.parentNode.parentNode.classList.remove('menu__item--active');
+      for (var i = 0; i < menuItems.length; i++) {
+        if (menuItems[i].classList.contains('menu__item--hidden')) {
+          menuItems[i].classList.remove('menu__item--hidden');
+        }
+      }
     }
-  });
-};
-
-for (var i = 0; i < closeMenuItem.length; i++) {
-    closeMenu(closeMenuItem[i]);
-}
+    target = target.parentNode;
+  }
+});
 
 
 

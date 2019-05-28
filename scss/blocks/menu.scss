@@ -99,6 +99,7 @@
 
 .menu__desc-wrapper p {
   @include indents-reset;
+  opacity: 0;
 }
 
 .menu__button-close {
@@ -147,6 +148,13 @@
   .menu__desc-wrapper {
     max-width: 540px;
     padding: 50px 5.55%;
+
+    p {
+      animation-name: showMenuText;
+      animation-duration: 0.7s;
+      animation-fill-mode: forwards;
+      animation-delay: 0.5s;
+    }
   }
 
   .menu__item-title {
@@ -156,6 +164,16 @@
 
 .menu__button:hover .menu__item-title {
   color: $yellow;
+}
+
+@keyframes showMenuText {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 960px) {
