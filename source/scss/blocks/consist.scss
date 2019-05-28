@@ -122,13 +122,19 @@
   line-height: 1;
 }
 
+@media (min-width: 960px) {
+  .consist__preview:hover ~ .consist__list-wrapper {
+    transform: scaleY(1);
+    opacity: 1;
+  }
 
-.consist__preview:hover ~ .consist__list-wrapper {
-  transform: scaleY(1);
-  opacity: 1;
+  .consist__list-wrapper:hover {
+    transform: scaleY(1);
+    opacity: 1;
+  }
 }
 
-.consist__list-wrapper:hover {
+.consist__list--show {
   transform: scaleY(1);
   opacity: 1;
 }

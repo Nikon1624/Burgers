@@ -141,6 +141,14 @@
     animation-timing-function: linear;
     z-index: 3;
   }
+
+  .main-nav__list--hide {
+    position: fixed;
+    animation-name: close-menu;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+  }
 }
 
 @media (max-width: 768px) {
@@ -172,5 +180,15 @@
 
   100% {
     transform: translateY(0);
+  }
+}
+
+@keyframes close-menu {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-100vh);
   }
 }

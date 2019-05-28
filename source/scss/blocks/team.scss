@@ -120,6 +120,7 @@
   }
 
   .team__list {
+    min-height: 415px;
     text-align: center;
   }
 
@@ -149,6 +150,13 @@
     align-self: center;
     margin-right: 0;
     margin-bottom: 20px;
+  }
+
+  .team__item--active {
+
+    .team__hidden {
+      height: 197px;
+    }
   }
 }
 
