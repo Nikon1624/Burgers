@@ -50,10 +50,6 @@
     right: 0;
     background-color: rgba($color: #000000, $alpha: 0.7);
   }
-
-  &:hover {
-    box-shadow: inset 0 0 15px 8px rgba($color: #ffffff, $alpha: 0.7);
-  }
 }
 
 .menu__button--meat {
@@ -158,6 +154,10 @@
   }
 }
 
+.menu__button:hover .menu__item-title {
+  color: $yellow;
+}
+
 @media (max-width: 960px) {
   .menu__list {
     min-height: 1024px;
@@ -184,11 +184,16 @@
   .menu__item--active {
 
     .menu__desc-wrapper {
+      max-width: 100vw;
 
       .menu__button-close {
         display: block;
       }
     }
+  }
+
+  .menu__item--hidden {
+    display: none;
   }
 }
 
