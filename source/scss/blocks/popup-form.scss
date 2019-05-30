@@ -1,0 +1,26 @@
+.popup-form {
+  position: fixed;
+  top: calc(50% - 50px);
+  left: calc(50% - 100px);
+  box-sizing: border-box;
+  width: 200px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #ffffff;
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.5s;
+}
+
+.popup-form__text {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+
+.popup-form--show {
+  opacity: 1;
+  transform: scale(1);
+  border-radius: 5px;
+}

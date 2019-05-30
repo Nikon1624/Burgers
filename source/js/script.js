@@ -117,21 +117,80 @@ menuList.addEventListener('click', function(evt) {
     if (target.classList.contains('menu__button')) {
       evt.preventDefault();
       addActiveClass(target, menuItems, 'menu__item--active');
-      for (var i = 0; i < menuItems.length; i++) {
-        if (menuItems[i] != target.parentNode) {
-          menuItems[i].classList.toggle('menu__item--hidden');
+      if (window.innerWidth < 768) {
+        for (var i = 0; i < menuItems.length; i++) {
+          if (menuItems[i] != target.parentNode) {
+            menuItems[i].classList.toggle('menu__item--hidden');
+          }
         }
       }
     }
     if (target.classList.contains('menu__button-close')) {
       target.parentNode.parentNode.classList.remove('menu__item--active');
-      for (var i = 0; i < menuItems.length; i++) {
-        if (menuItems[i].classList.contains('menu__item--hidden')) {
-          menuItems[i].classList.remove('menu__item--hidden');
+      if (window.innerWidth < 768) {
+        for (var i = 0; i < menuItems.length; i++) {
+          if (menuItems[i].classList.contains('menu__item--hidden')) {
+            menuItems[i].classList.remove('menu__item--hidden');
+          }
         }
       }
     }
     target = target.parentNode;
+  }
+});
+
+// Секция Формы
+var form = document.querySelector('.delivery__form');
+var submit = document.querySelector('.form__submit');
+var formPopup = document.querySelector('.popup-form');
+
+submit.addEventListener('click', function(evt) {
+  evt.preventDefault();
+  function validateField(field) {
+    field.value = field.validationMessage;
+    return field.checkValidity();
+  }
+
+  function validateForm(form) {
+    var valid = true;
+    if (!validateField(form.elements.name)) {
+      valid = false;
+    } else if (!validateField(form.elements.tel)) {
+      valid = false;
+    } else if (!validateField(form.elements.street)) {
+      valid = false;
+    } else if (!validateField(form.elements.house)) {
+      valid = false;
+    } else if (!validateField(form.elements.housing)) {
+      valid = false;
+    } else if (!validateField(form.elements.housing)) {
+      valid = false;
+    } else if (!validateField(form.elements.apartment)) {
+      valid = false;
+    } else if (!validateField(form.elements.comment)) {
+      valid = false;
+    }
+    return valid;
+  }
+
+  console.log(validateForm(form));
+
+  if (validateForm(form)) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
+    var data = {
+      name: form.elements.name.value,
+      phone: form.elements.tel.value,
+      comment: form.elements.comment.value
+    };
+    xhr.send(JSON.stringify(data));
+    xhr.addEventListener('load', function() {
+      if (xhr.status >= 400) {
+        console.log('Error');
+      } else {
+        formPopup.classList.add('popup-form--show');
+      }
+    });
   }
 });
 

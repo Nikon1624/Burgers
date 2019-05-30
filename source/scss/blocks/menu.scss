@@ -26,6 +26,7 @@
 
 .menu__item {
   display: flex;
+  max-width: 80px;
   height: 100vh;
   min-height: 650px;
   transition: 0.5s;
@@ -144,6 +145,7 @@
 }
 
 .menu__item--active {
+  max-width: 620px;
 
   .menu__desc-wrapper {
     max-width: 540px;
