@@ -140,6 +140,15 @@
   &--small {
     text-align: center;
   }
+
+  &--error {
+    border-color: red;
+    box-shadow: 0 0 10px 4px rgba($color: #FF0000, $alpha: 0.5);
+
+    &::placeholder {
+      font-size: 10px;
+    }
+  }
 }
 
 .form__payment-wrapper {

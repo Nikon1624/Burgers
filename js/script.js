@@ -142,56 +142,75 @@ menuList.addEventListener('click', function(evt) {
 // Секция Формы
 var form = document.querySelector('.delivery__form');
 var submit = document.querySelector('.form__submit');
-var formPopup = document.querySelector('.popup-form');
+var formPopup = document.querySelector('.popup-form__wrapper');
+var formPopupMessage = formPopup.querySelector('.popup-form__text');
+var inputCollection = form.querySelectorAll('.form__input');
 
 submit.addEventListener('click', function(evt) {
   evt.preventDefault();
-  function validateField(field) {
-    field.value = field.validationMessage;
-    return field.checkValidity();
-  }
-
-  function validateForm(form) {
-    var valid = true;
-    if (!validateField(form.elements.name)) {
-      valid = false;
-    } else if (!validateField(form.elements.tel)) {
-      valid = false;
-    } else if (!validateField(form.elements.street)) {
-      valid = false;
-    } else if (!validateField(form.elements.house)) {
-      valid = false;
-    } else if (!validateField(form.elements.housing)) {
-      valid = false;
-    } else if (!validateField(form.elements.housing)) {
-      valid = false;
-    } else if (!validateField(form.elements.apartment)) {
-      valid = false;
-    } else if (!validateField(form.elements.comment)) {
-      valid = false;
-    }
-    return valid;
-  }
-
-  console.log(validateForm(form));
 
   if (validateForm(form)) {
+    var formData = new FormData();
+
+    formData.append('name', form.elements.name.value);
+    formData.append('phone', form.elements.tel.value);
+    formData.append('comment', form.elements.comment.value);
+    formData.append('to', 'form@mail.com');
+
     var xhr = new XMLHttpRequest();
+    xhr.responseType = 'json';
     xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
-    var data = {
-      name: form.elements.name.value,
-      phone: form.elements.tel.value,
-      comment: form.elements.comment.value
-    };
-    xhr.send(JSON.stringify(data));
-    xhr.addEventListener('load', function() {
+    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    xhr.send(formData);
+    xhr.addEventListener('load', function () {
       if (xhr.status >= 400) {
-        console.log('Error');
-      } else {
-        formPopup.classList.add('popup-form--show');
+        formPopupMessage.textContent = 'Не удалось отправить заявку, код ошибки ' + xhr.status;
       }
+      formPopup.classList.add('popup-form--show');
     });
   }
+
+  for (var i = 0; i < inputCollection.length; i++) {
+    inputCollection[i].value = '';
+  }
+
+});
+
+function validateForm(form) {
+  var valid = true;
+
+  if (!validateField(form.elements.name)) {
+    valid = false;
+  }
+
+  if (!validateField(form.elements.tel)) {
+    valid = false;
+  }
+
+  if (!validateField(form.elements.comment)) {
+    valid = false;
+  }
+
+  return valid;
+}
+
+function validateField(field) {
+  if (!field.checkValidity()) {
+    field.classList.add('form__input--error');
+    field.placeholder = field.validationMessage;
+    return false;
+  } else {
+    if (field.classList.contains('form__input--error')) {
+      field.classList.remove('form__input--error');
+    }
+    return true;
+  }
+}
+
+var closePopup = formPopup.querySelector('.popup-form__button');
+
+closePopup.addEventListener('click', function() {
+  formPopup.classList.remove('popup-form--show');
 });
 
 
