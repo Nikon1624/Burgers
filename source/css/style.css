@@ -1893,6 +1893,31 @@ img {
   text-align: center;
 }
 
+.form__input--error {
+  border-color: red;
+  box-shadow: 0 0 10px 4px rgba(255, 0, 0, 0.5);
+}
+
+.form__input--error::-webkit-input-placeholder {
+  font-size: 10px;
+}
+
+.form__input--error::-moz-placeholder {
+  font-size: 10px;
+}
+
+.form__input--error:-ms-input-placeholder {
+  font-size: 10px;
+}
+
+.form__input--error::-ms-input-placeholder {
+  font-size: 10px;
+}
+
+.form__input--error::placeholder {
+  font-size: 10px;
+}
+
 .form__payment-wrapper {
   margin-right: 15px;
 }
@@ -2323,20 +2348,29 @@ img {
   }
 }
 
-.popup-form {
+.popup-form__wrapper {
   position: fixed;
+  left: 0vw;
+  top: 0vh;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(47, 50, 52, 0.93);
+  opacity: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  transition: 0.5s;
+}
+
+.popup-form {
+  position: absolute;
   top: calc(50% - 50px);
   left: calc(50% - 100px);
   box-sizing: border-box;
   width: 200px;
   padding: 20px;
   text-align: center;
-  border-radius: 50%;
+  border-radius: 5px;
   background-color: #ffffff;
-  opacity: 0;
-  -webkit-transform: scale(0);
-          transform: scale(0);
-  transition: 0.5s;
 }
 
 .popup-form__text {
@@ -2349,5 +2383,4 @@ img {
   opacity: 1;
   -webkit-transform: scale(1);
           transform: scale(1);
-  border-radius: 5px;
 }

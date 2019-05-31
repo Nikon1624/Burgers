@@ -1,16 +1,25 @@
-.popup-form {
+.popup-form__wrapper {
   position: fixed;
+  left: 0vw;
+  top: 0vh;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba($color: $black, $alpha: 0.93);
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.5s;
+}
+
+.popup-form {
+  position: absolute;
   top: calc(50% - 50px);
   left: calc(50% - 100px);
   box-sizing: border-box;
   width: 200px;
   padding: 20px;
   text-align: center;
-  border-radius: 50%;
+  border-radius: 5px;
   background-color: #ffffff;
-  opacity: 0;
-  transform: scale(0);
-  transition: 0.5s;
 }
 
 .popup-form__text {
@@ -22,5 +31,4 @@
 .popup-form--show {
   opacity: 1;
   transform: scale(1);
-  border-radius: 5px;
 }
