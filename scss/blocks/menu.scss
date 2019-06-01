@@ -67,13 +67,13 @@
 
 @each $bg in (meat, vegan, slim) {
   .menu__button--#{$bg}.webp {
-    background-image: url("../img/#{$bg}.webp")
+    background-image: url("../img/#{$bg}.webp");
   }
 }
 
 @each $bg in (meat, vegan, slim) {
   .menu__button--#{$bg}.no-webp {
-    background-image: url("../img/#{$bg}.jpg")
+    background-image: url("../img/#{$bg}.jpg");
   }
 }
 
