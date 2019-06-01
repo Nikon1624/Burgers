@@ -4,6 +4,10 @@
   line-height: 2;
   font-weight: 500;
   color: #ffffff;
+
+  &--black {
+    color: $black;
+  }
 }
 
 @media (max-width: 768px) {

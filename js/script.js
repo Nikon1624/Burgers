@@ -20,6 +20,25 @@ for (var i = 0; i < reviewLink.length; i++) {
   });
 }
 
+var reviews = document.querySelector('.reviews');
+var reviewsModal = reviews.querySelector('.reviews__modal-wrapper');
+var reviewsModalTitle = reviewsModal.querySelector('.reviews__modal-title');
+var reviewsModalText = reviewsModal.querySelector('.reviews__modal-text');
+
+reviews.addEventListener('click', function(evt) {
+  evt.preventDefault();
+  var target = evt.target;
+  if (target.classList.contains('reviews__link')) {
+    reviewsModal.classList.add('reviews__modal-wrapper--show');
+    reviewsModalTitle.textContent = target.parentNode.children[0].textContent;
+    reviewsModalText.textContent = target.parentNode.children[1].textContent;
+  }
+
+  if (target.classList.contains('reviews__close-modal')) {
+    target.parentNode.parentNode.classList.remove('reviews__modal-wrapper--show');
+  }
+});
+
 // Главное Меню
 var toggle = $('.main-nav__toggle');
 var mainMenu = $('.main-nav__list');
@@ -212,6 +231,3 @@ var closePopup = formPopup.querySelector('.popup-form__button');
 closePopup.addEventListener('click', function() {
   formPopup.classList.remove('popup-form--show');
 });
-
-
-

@@ -945,6 +945,10 @@ img {
   color: #ffffff;
 }
 
+.small-title--black {
+  color: #2f3234;
+}
+
 @media (max-width: 768px) {
   .small-title {
     font-size: 1.7143rem;
@@ -1089,6 +1093,7 @@ img {
 }
 
 .reviews {
+  position: relative;
   background-color: #5e5e5e;
 }
 
@@ -1207,6 +1212,81 @@ img {
   align-self: flex-start;
 }
 
+.reviews__modal-wrapper {
+  position: fixed;
+  left: 0vw;
+  top: 0vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(47, 50, 52, 0.93);
+  z-index: 5;
+  opacity: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  transition: 0.3s;
+}
+
+.reviews__modal {
+  position: relative;
+  box-sizing: border-box;
+  width: 48.95%;
+  max-width: 460px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  z-index: 5;
+}
+
+.reviews__close-modal {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.reviews__close-modal::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 21px;
+  height: 4px;
+  border-radius: 5px;
+  background-color: #eb8262;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.reviews__close-modal::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 21px;
+  height: 4px;
+  border-radius: 5px;
+  background-color: #eb8262;
+  -webkit-transform-origin: 0 100%;
+          transform-origin: 0 100%;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.reviews__modal-wrapper--show {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
 @media (max-width: 960px) {
   .reviews__item {
     width: 50%;
@@ -1232,6 +1312,11 @@ img {
 
 .show-review {
   opacity: 1;
+}
+
+.reviews__modal {
+  width: 100%;
+  max-width: calc(100% - 20px);
 }
 
 .team {
@@ -2359,6 +2444,7 @@ img {
   -webkit-transform: scale(0);
           transform: scale(0);
   transition: 0.5s;
+  z-index: 5;
 }
 
 .popup-form {
@@ -2371,6 +2457,7 @@ img {
   text-align: center;
   border-radius: 5px;
   background-color: #ffffff;
+  z-index: 5;
 }
 
 .popup-form__text {
