@@ -42,6 +42,13 @@ reviews.addEventListener('click', function(evt) {
   }
 });
 
+reviews.addEventListener('keydown', function(evt) {
+  if (evt.keyCode === 27) {
+    evt.preventDefault();
+    reviewsModal.classList.remove('reviews__modal-wrapper--show');
+  }
+});
+
 // Главное Меню
 var toggle = $('.main-nav__toggle');
 var mainMenu = $('.main-nav__list');
