@@ -160,13 +160,13 @@
   .reviews__text {
     display: none;
   }
+
+  .reviews__modal {
+    width: 100%;
+    max-width: calc(100% - 20px);
+  }
 }
 
 .show-review {
   opacity: 1;
-}
-
-.reviews__modal {
-  width: 100%;
-  max-width: calc(100% - 20px);
 }
