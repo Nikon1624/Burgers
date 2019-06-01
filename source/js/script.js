@@ -24,6 +24,7 @@ var reviews = document.querySelector('.reviews');
 var reviewsModal = reviews.querySelector('.reviews__modal-wrapper');
 var reviewsModalTitle = reviewsModal.querySelector('.reviews__modal-title');
 var reviewsModalText = reviewsModal.querySelector('.reviews__modal-text');
+var body = document.querySelector('body');
 
 reviews.addEventListener('click', function(evt) {
   evt.preventDefault();
@@ -32,10 +33,12 @@ reviews.addEventListener('click', function(evt) {
     reviewsModal.classList.add('reviews__modal-wrapper--show');
     reviewsModalTitle.textContent = target.parentNode.children[0].textContent;
     reviewsModalText.textContent = target.parentNode.children[1].textContent;
+    body.classList.add('hidden');
   }
 
   if (target.classList.contains('reviews__close-modal')) {
     target.parentNode.parentNode.classList.remove('reviews__modal-wrapper--show');
+    body.classList.remove('hidden');
   }
 });
 
@@ -164,6 +167,7 @@ var submit = document.querySelector('.form__submit');
 var formPopup = document.querySelector('.popup-form__wrapper');
 var formPopupMessage = formPopup.querySelector('.popup-form__text');
 var inputCollection = form.querySelectorAll('.form__input');
+var body = document.querySelector('body');
 
 submit.addEventListener('click', function(evt) {
   evt.preventDefault();
@@ -182,6 +186,7 @@ submit.addEventListener('click', function(evt) {
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     xhr.send(formData);
     xhr.addEventListener('load', function () {
+      body.classList.add('hidden');
       if (xhr.status >= 400) {
         formPopupMessage.textContent = 'Не удалось отправить заявку, код ошибки ' + xhr.status;
       }
@@ -230,4 +235,5 @@ var closePopup = formPopup.querySelector('.popup-form__button');
 
 closePopup.addEventListener('click', function() {
   formPopup.classList.remove('popup-form--show');
+  body.classList.remove('hidden');
 });
