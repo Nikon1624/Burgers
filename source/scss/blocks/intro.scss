@@ -46,9 +46,6 @@
 }
 
 .intro__arrow {
-  position: absolute;
-  left: calc(50% - 15px);
-  bottom: 40px;
   animation-name: arrow;
   animation-direction: alternate;
   animation-iteration-count: infinite;

@@ -562,9 +562,6 @@ img {
 }
 
 .intro__arrow {
-  position: absolute;
-  left: calc(50% - 15px);
-  bottom: 40px;
   -webkit-animation-name: arrow;
           animation-name: arrow;
   -webkit-animation-direction: alternate;
@@ -956,7 +953,19 @@ img {
   }
 }
 
+.arrow-wrapper {
+  position: absolute;
+  left: calc(50% - 25px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 40px;
+  width: 50px;
+  height: 34px;
+}
+
 .arrow {
+  display: block;
   width: 30px;
   height: 14px;
   background-image: url("../img/icons/arrow-scroll.svg");
