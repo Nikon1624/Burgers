@@ -33,11 +33,7 @@ reviews.addEventListener('click', function(evt) {
     reviewsModal.classList.add('reviews__modal-wrapper--show');
     reviewsModalTitle.textContent = target.parentNode.children[0].textContent;
     reviewsModalText.textContent = target.parentNode.children[1].textContent;
-<<<<<<< HEAD
     closePopups(reviewsModal, 'reviews__modal-wrapper--show');
-=======
-    body.classList.add('hidden');
->>>>>>> e0eb11a7f8a965bd7a5fdfd91bd1cca02035cfc8
   }
 
   if (target.classList.contains('reviews__close-modal')) {
@@ -176,11 +172,7 @@ var submit = document.querySelector('.form__submit');
 var formPopup = document.querySelector('.popup-form__wrapper');
 var formPopupMessage = formPopup.querySelector('.popup-form__text');
 var inputCollection = form.querySelectorAll('.form__input');
-<<<<<<< HEAD
 var sendCount = 0;
-=======
-var body = document.querySelector('body');
->>>>>>> e0eb11a7f8a965bd7a5fdfd91bd1cca02035cfc8
 
 submit.addEventListener('click', function(evt) {
   evt.preventDefault();
@@ -200,14 +192,7 @@ submit.addEventListener('click', function(evt) {
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     xhr.send(formData);
     xhr.addEventListener('load', function () {
-<<<<<<< HEAD
       formPopupMessage.textContent = xhr.response.message;
-=======
-      body.classList.add('hidden');
-      if (xhr.status >= 400) {
-        formPopupMessage.textContent = 'Не удалось отправить заявку, код ошибки ' + xhr.status;
-      }
->>>>>>> e0eb11a7f8a965bd7a5fdfd91bd1cca02035cfc8
       formPopup.classList.add('popup-form--show');
       closePopups(formPopup, 'popup-form--show');
       for (var i = 0; i < inputCollection.length; i++) {
