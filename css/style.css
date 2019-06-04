@@ -1303,6 +1303,7 @@ img {
     text-align: center;
   }
   .reviews__hidden {
+    justify-content: center;
     align-items: center;
   }
   .reviews__item-title {
