@@ -28,6 +28,7 @@
 
 .team__list {
   @extend %list-reset;
+  min-height: 325px;
   color: #ffffff;
 }
 
@@ -38,8 +39,9 @@
 .team__item-title {
   display: block;
   position: relative;
+  margin-bottom: 0;
   padding-left: 20px;
-  transition: 0.4s;
+  transition: 0.2s linear;
 
   &:hover {
     color: $yellow;
@@ -58,6 +60,7 @@
     border-right-color: transparent;
     border-left-width: 5px;
     border-right-width: 5px;
+    transition: 0.2s linear;
   }
 }
 
@@ -67,6 +70,7 @@
   overflow: hidden;
   padding-left: 20px;
   line-height: 1.71;
+  transition: 0.2s linear;
 }
 
 .team__img-wrapper {
@@ -93,7 +97,7 @@
 .team__item--active {
 
   .team__hidden {
-    height: auto;
+    height: 100px;
   }
 
   .team__item-title {
@@ -116,6 +120,7 @@
   }
 
   .team__list {
+    min-height: 415px;
     text-align: center;
   }
 
@@ -145,6 +150,13 @@
     align-self: center;
     margin-right: 0;
     margin-bottom: 20px;
+  }
+
+  .team__item--active {
+
+    .team__hidden {
+      height: 197px;
+    }
   }
 }
 

@@ -109,6 +109,14 @@
   background-position: center;
 }
 
+.form__radio:focus ~ .form__label--radio::before {
+  box-shadow: 0 0 5px 3px $orange;
+}
+
+.form__checkbox:focus ~ .form__label--checkbox::before {
+  box-shadow: 0 0 5px 3px $orange;
+}
+
 .form__input {
   box-sizing: border-box;
   width: 100%;
@@ -131,6 +139,15 @@
 
   &--small {
     text-align: center;
+  }
+
+  &--error {
+    border-color: red;
+    box-shadow: 0 0 10px 4px rgba($color: #FF0000, $alpha: 0.5);
+
+    &::placeholder {
+      font-size: 10px;
+    }
   }
 }
 

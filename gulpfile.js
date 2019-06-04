@@ -4,6 +4,7 @@ var browserSync = require('browser-sync');
 var sourcemap = require('gulp-sourcemaps');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
+var minify = require('gulp-cssnano');
 var webp = require('gulp-webp');
 var rename = require('gulp-rename');
 var svgstore = require('gulp-svgstore');
@@ -11,15 +12,27 @@ var svgstore = require('gulp-svgstore');
 gulp.task('sass', function () {
   return gulp.src('source/scss/**/style.scss')
     .pipe(sourcemap.init())
-    .pipe(sass())
+    .pipe(sass({outputStyle: 'expanded'}))
     .pipe(postcss([
       autoprefixer()
     ]))
-    .pipe(sourcemap.write('.'))
     .pipe(gulp.dest('source/css'))
+    .pipe(minify())
+    .pipe(rename({suffix: '.min'}))
+    .pipe(sourcemap.write('.'))
     .pipe(browserSync.reload({
       stream: true
     }))
+});
+
+gulp.task('minify', function() {
+  return gulp.src('source/css/style.css')
+  .pipe(sourcemap.init())
+  .pipe(minify())
+  .pipe(rename({suffix: '.min'}))
+  .pipe(sourcemap.write('.'))
+  .pipe(gulp.dest('source/css'))
+  .pipe(browserSync.reload({stream: true}))
 });
 
 gulp.task('browser-sync', function () {
@@ -48,6 +61,7 @@ gulp.task('sprite', function() {
 
 gulp.task('watch', function () {
   gulp.watch('source/scss/**/*.scss', gulp.parallel('sass'));
+  gulp.watch('source/css/style.css', gulp.parallel('minify'))
   gulp.watch('source/scss/**/*.scss', gulp.parallel('browser-sync'));
   gulp.watch(['source/img/**/*.png', 'source/img/**/*.jpg'], gulp.parallel('webp'));
   gulp.watch('source/img/icons/**/*.svg', gulp.parallel('sprite'));

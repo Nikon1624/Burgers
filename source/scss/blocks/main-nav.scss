@@ -60,11 +60,10 @@
     top: 0;
     right: 0;
     bottom: 0;
+    height: 100vh;
     background-color: rgba($color: $black, $alpha: 0.93);
     z-index: 1;
-    opacity: 0;
-    transform: scale(0);
-    transition: 0.3s;
+    transform: translateY(-100vh);
   }
 
   .main-nav__item {
@@ -80,14 +79,16 @@
   }
 
   .main-nav__toggle {
-    position: relative;
+    position: fixed;
+    right: 25px;
+    top: 38px;
     display: block;
     width: 25px;
     height: 22px;
     background-color: transparent;
     border: none;
     cursor: pointer;
-    z-index: 2;
+    z-index: 4;
 
     &::after {
       content: "";
@@ -98,7 +99,7 @@
       height: 4px;
       border-radius: 5px;
       background-color: #ffffff;
-      transition: 0.3s;
+      transition: 0.4s;
     }
 
     &::before {
@@ -111,7 +112,7 @@
       border-radius: 5px;
       background-color: #ffffff;
       box-shadow: 0 9px 0 0 #ffffff;
-      transition: 0.3s;
+      transition: 0.4s;
     }
 
     &--active {
@@ -133,7 +134,61 @@
   }
 
   .main-nav__list--active {
-    opacity: 1;
-    transform: scale(1);
+    position: fixed;
+    animation-name: show-menu;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    z-index: 3;
+  }
+
+  .main-nav__list--hide {
+    position: fixed;
+    animation-name: close-menu;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-nav__toggle {
+    right: 15px;
+  }
+}
+
+@keyframes show-menu {
+  0% {
+    transform: translateY(-100vh);
+  }
+
+  30% {
+    transform: translateY(10vh);
+  }
+
+  50% {
+    transform: translateY(-10vh);
+  }
+
+  70% {
+    transform: translateY(5vh);
+  }
+
+  90% {
+    transform: translateY(-5vh);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes close-menu {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-100vh);
   }
 }
