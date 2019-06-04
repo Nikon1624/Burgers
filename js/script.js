@@ -32,6 +32,7 @@ reviews.addEventListener('click', function(evt) {
     reviewsModal.classList.add('reviews__modal-wrapper--show');
     reviewsModalTitle.textContent = target.parentNode.children[0].textContent;
     reviewsModalText.textContent = target.parentNode.children[1].textContent;
+    closePopups(reviewsModal, 'reviews__modal-wrapper--show');
   }
 
   if (target.classList.contains('reviews__close-modal')) {
@@ -49,22 +50,20 @@ reviews.addEventListener('keydown', function(evt) {
 // Главное Меню
 var toggle = $('.main-nav__toggle');
 var mainMenu = $('.main-nav__list');
-var body = $('body');
-var mainMenuCount = 0;
 
 toggle.click(function(evt) {
   evt.preventDefault();
-  mainMenuCount++;
-  if (mainMenuCount % 2 != 0) {
+  if (mainMenu.hasClass('main-nav__list--active')) {
+    mainMenu.removeClass('main-nav__list--active');
+    mainMenu.addClass('main-nav__list--hide');
+  } else {
+    mainMenu.addClass('main-nav__list--active');
     if (mainMenu.hasClass('main-nav__list--hide')) {
       mainMenu.removeClass('main-nav__list--hide');
     }
-    mainMenu.addClass('main-nav__list--active');
-  } else {
-    mainMenu.addClass('main-nav__list--hide');
   }
   toggle.toggleClass('main-nav__toggle--active');
-  body.toggleClass('hidden');
+  $('body').toggleClass('hidden');
 });
 
 // Секция Команда
@@ -171,6 +170,7 @@ var submit = document.querySelector('.form__submit');
 var formPopup = document.querySelector('.popup-form__wrapper');
 var formPopupMessage = formPopup.querySelector('.popup-form__text');
 var inputCollection = form.querySelectorAll('.form__input');
+var sendCount = 0;
 
 submit.addEventListener('click', function(evt) {
   evt.preventDefault();
@@ -185,21 +185,19 @@ submit.addEventListener('click', function(evt) {
 
     var xhr = new XMLHttpRequest();
     xhr.responseType = 'json';
-    xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
+    sendCount++;
+    sendCount % 2 != 0 ? xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail') : xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail/fail');
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     xhr.send(formData);
     xhr.addEventListener('load', function () {
-      if (xhr.status >= 400) {
-        formPopupMessage.textContent = 'Не удалось отправить заявку, код ошибки ' + xhr.status;
-      }
+      formPopupMessage.textContent = xhr.response.message;
       formPopup.classList.add('popup-form--show');
+      closePopups(formPopup, 'popup-form--show');
+      for (var i = 0; i < inputCollection.length; i++) {
+        inputCollection[i].value = '';
+      }
     });
   }
-
-  for (var i = 0; i < inputCollection.length; i++) {
-    inputCollection[i].value = '';
-  }
-
 });
 
 function validateForm(form) {
@@ -238,3 +236,14 @@ var closePopup = formPopup.querySelector('.popup-form__button');
 closePopup.addEventListener('click', function() {
   formPopup.classList.remove('popup-form--show');
 });
+
+
+// Закрытие попапа по клику вне
+function closePopups(popup, activeClass) {
+  popup.addEventListener('click', function(evt) {
+    var target = evt.target;
+    if (target == popup) {
+      popup.classList.remove(activeClass);
+    }
+  });
+}
