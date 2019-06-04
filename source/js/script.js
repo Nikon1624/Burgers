@@ -250,3 +250,14 @@ function closePopups(popup, activeClass) {
     }
   });
 }
+
+// OnePageScroll
+var wrapper = $('.wrapper');
+
+// $('body').addClass('hidden');
+
+wrapper.on('wheel', function() {
+  wrapper.animate({
+    'transform': 'translateY(-100vh)'
+  }, 900);
+});
