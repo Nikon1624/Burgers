@@ -35,12 +35,18 @@
       border-radius: 50%;
       background-color: #ffffff;
     }
-
-    &--active,
-    &:hover {
-      border: 1px solid #ffffff;
-    }
   }
+}
+
+.toggle__item--active {
+
+  .toggle__button {
+    border: 1px solid #ffffff;
+  }
+}
+
+.toggle__button:hover {
+  border: 1px solid #ffffff;
 }
 
 @media (max-width: 960px) {
