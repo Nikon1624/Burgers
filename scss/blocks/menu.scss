@@ -19,16 +19,12 @@
   right: 0;
   bottom: 0;
   display: flex;
-  height: 100vh;
-  min-height: 650px;
   color: #ffffff;
 }
 
 .menu__item {
   display: flex;
   max-width: 80px;
-  height: 100vh;
-  min-height: 650px;
   transition: 0.5s;
 }
 
@@ -179,28 +175,12 @@
 }
 
 @media (max-width: 960px) {
-  .menu__list {
-    min-height: 1024px;
-  }
-
-  .menu__item {
-    min-height: 1024px;
-  }
-
   .menu__desc-wrapper--active {
     max-width: 100%;
   }
 }
 
 @media (max-width: 768px) {
-  .menu__list {
-    min-height: 800px;
-  }
-
-  .menu__item {
-    min-height: 800px;
-  }
-
   .menu__item--active {
 
     .menu__desc-wrapper {
