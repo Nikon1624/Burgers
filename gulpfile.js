@@ -4,11 +4,14 @@ var browserSync = require('browser-sync');
 var sourcemap = require('gulp-sourcemaps');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
-var minify = require('gulp-cssnano');
 var webp = require('gulp-webp');
 var rename = require('gulp-rename');
 var svgstore = require('gulp-svgstore');
 var imagemin = require('gulp-imagemin');
+var del = require('del');
+var gcmq = require('gulp-group-css-media-queries');
+var cleanCSS = require('gulp-clean-css');
+var concat = require('gulp-concat');
 
 gulp.task('sass', function () {
   return gulp.src('source/scss/**/style.scss')
@@ -17,33 +20,12 @@ gulp.task('sass', function () {
     .pipe(postcss([
       autoprefixer()
     ]))
-    .pipe(gulp.dest('source/css'))
-    .pipe(minify())
-    .pipe(rename({suffix: '.min'}))
+    .pipe(cleanCSS())
     .pipe(sourcemap.write('.'))
+    .pipe(gulp.dest('source/css'))
     .pipe(browserSync.reload({
       stream: true
     }))
-});
-
-gulp.task('minify', function() {
-  return gulp.src('source/css/style.css')
-  .pipe(sourcemap.init())
-  .pipe(minify())
-  .pipe(rename({suffix: '.min'}))
-  .pipe(sourcemap.write('.'))
-  .pipe(gulp.dest('source/css'))
-  .pipe(browserSync.reload({stream: true}))
-});
-
-gulp.task('html', function() {
-  return gulp.src('source/*.html')
-  .pipe(browserSync.reload({stream: true}))
-});
-
-gulp.task('js', function() {
-  return gulp.src('source/js/**/*.js')
-  .pipe(browserSync.reload({stream: true}))
 });
 
 gulp.task('browser-sync', function () {
@@ -81,10 +63,29 @@ gulp.task('sprite', function() {
   .pipe(gulp.dest('source/img'))
 });
 
+gulp.task('copy', function() {
+  return gulp.src([
+    'source/fonts/**/*.{woff,woff2}',
+    'source/img/**',
+    'source/js/**',
+    'source/*.html',
+    'source/css/*.css'
+    ],
+    {
+      base: "source"
+    })
+  .pipe(gulp.dest('build'));
+});
+
+gulp.task('clean', function() {
+  return del('build');
+});
+
+gulp.task('build', gulp.series('clean', 'copy'));
+
 gulp.task('watch', function () {
   gulp.watch('source/scss/**/*.scss', gulp.parallel('sass'));
-  gulp.watch('source/css/style.css', gulp.parallel('minify'));
-  gulp.watch(['source/scss/**/*.scss', 'source/*.html', 'source/js/**/*.js'], gulp.parallel('browser-sync'));
+  gulp.watch('source/scss/**/*.scss', gulp.parallel('browser-sync'));
   gulp.watch(['source/img/**/*.png', 'source/img/**/*.jpg'], gulp.parallel('webp'));
   gulp.watch('source/img/icons/**/*.svg', gulp.parallel('sprite'));
 });
