@@ -82,3 +82,21 @@
     margin-bottom: 10px;
   }
 }
+
+@media (max-width: 430px) {
+  .advantages__title {
+    margin-bottom: 10px;
+  }
+
+  .advantages__item {
+    margin-bottom: 15px;
+  }
+
+  .advantages__item-title {
+    font-size: 1.5em;
+  }
+
+  .advantages__desc {
+    font-size: 0.9em;
+  }
+}

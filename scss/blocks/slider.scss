@@ -201,3 +201,17 @@
     height: auto;
   }
 }
+
+@media (max-width: 430px) {
+  .slider__item-title {
+    padding: 0;
+  }
+
+  .slider__desc {
+    margin-bottom: 10px;
+  }
+
+  .slider__img-wrapper {
+    min-height: auto;
+  }
+}

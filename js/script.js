@@ -342,7 +342,7 @@ if (document.documentElement.clientHeight >= 650) {
   });
 }
 
-if (document.documentElement.clientWidth < 960) {
+if (document.documentElement.clientWidth < 960 && document.documentElement.clientHeight >= 700) {
   $(function() {
     var wrapper = $('.wrapper');
         var topPosition = 0;
