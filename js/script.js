@@ -317,38 +317,103 @@ if (document.documentElement.clientHeight >= 650) {
   $('.toggle').css('display', 'none');
 }
 
-$(function() {
-  var wrapper = $('.wrapper');
-      var topPosition = 0;
-      var maxTopPosition = -($('.section').length - 1) * 100;
-      var animation = true;
-  $('.wrapper').swipe( {
-    swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
-      $('body').addClass('hidden--onepagescroll');
+if (document.documentElement.clientWidth < 960) {
+  $(function() {
+    var wrapper = $('.wrapper');
+        var topPosition = 0;
+        var maxTopPosition = -($('.section').length - 1) * 100;
+        var animation = true;
+    $('.wrapper').swipe( {
+      swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+        $('body').addClass('hidden--onepagescroll');
 
-      if (direction == 'up') {
-        if (topPosition != maxTopPosition && animation) {
-          animation = false;
-          topPosition -= 100;
-          wrapper.animate({
-            'top': topPosition + 'vh'
-          }, 700, function() {
-            animation = true;
-          });
-        }
-      } else if (direction = 'down') {
-        if (topPosition != 0 && animation) {
-          animation = false;
-          topPosition += 100;
-          wrapper.animate({
-            'top': topPosition + 'vh'
-          }, 700, function() {
-            animation = true;
-          });
+        if (direction == 'up') {
+          if (topPosition != maxTopPosition && animation) {
+            animation = false;
+            topPosition -= 100;
+            wrapper.animate({
+              'top': topPosition + 'vh'
+            }, 700, function() {
+              animation = true;
+            });
+          }
+        } else if (direction = 'down') {
+          if (topPosition != 0 && animation) {
+            animation = false;
+            topPosition += 100;
+            wrapper.animate({
+              'top': topPosition + 'vh'
+            }, 700, function() {
+              animation = true;
+            });
+          }
         }
       }
-    }
+    });
+
+    $('.wrapper').swipe( {fingers:1} );
+  });
+}
+
+// Карта
+ymaps.ready(init);
+
+var placemarks = [
+  {
+    latitude: 59.966130762607534,
+    longitude: 30.312358723270304,
+    hintContent: 'Большой проспект П.С, д.35А'
+  },
+  {
+    latitude: 59.94847814647842,
+    longitude: 30.384830818410517,
+    hintContent: 'ул. Шпалерная, д.51'
+  },
+  {
+    latitude: 59.89310330004065,
+    longitude: 30.319902770572032,
+    hintContent: 'Московский проспект, д.110'
+  },
+  {
+    latitude: 59.91713941136519,
+    longitude: 30.4955342713557,
+    hintContent: 'просп. Солидарности, д.19'
+  }
+];
+
+function init () {
+  var map = new ymaps.Map('map', {
+    center: [59.94, 30.32],
+    zoom: 11,
+    controls: ['zoomControl'],
+    behaviors: ['drag']
   });
 
-  $('.wrapper').swipe( {fingers:1} );
-});
+  placemarks.forEach(function(obj) {
+    var placemark = new ymaps.Placemark([obj.latitude, obj.longitude], {
+      hintContent: obj.hintContent
+    },
+    {
+      iconLayout: 'default#image',
+      iconImageHref: './img/icons/map-marker.svg',
+      iconImageSize: [46, 57],
+      iconImageOffset: [-23, -57]
+    });
+
+    map.geoObjects.add(placemark);
+  });
+
+  // Для одного маркера
+  // var placemark = new ymaps.Placemark([59.966130762607534,30.312358723270304], {
+  //   hintContent: 'Большой проспект П.С, д.35А',
+  // },
+  // {
+  //   iconLayout: 'default#image',
+  //   iconImageHref: './img/icons/map-marker.svg',
+  //   iconImageSize: [46, 57],
+  //   iconImageOffset: [-23, -57]
+  // });
+
+  // map.geoObjects.add(placemark);
+}
+

@@ -11,7 +11,12 @@
 
 @media (max-width: 960px) {
   .section {
-    height: 100vh;
-    min-height: auto;
+    min-height: 1024px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    min-height: 800px;
   }
 }
