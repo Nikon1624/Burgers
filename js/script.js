@@ -312,9 +312,34 @@ if (document.documentElement.clientHeight >= 650) {
         nextToggle = $this.next();
       });
     });
+
+    var arrowDown = $('.arrow-wrapper');
+
+    arrowDown.on('click', function(evt) {
+      evt.preventDefault();
+      topPosition -= 100;
+      wrapper.animate({
+        'top': topPosition + 'vh'
+      }, 700, function() {
+        toggleActive.removeClass('toggle__item--active');
+        nextToggle.addClass('toggle__item--active');
+        toggleActive = nextToggle;
+        nextToggle = nextToggle.next();
+        animation = true;
+      });
+    });
   });
 } else {
   $('.toggle').css('display', 'none');
+  var arrowDown = $('.arrow-wrapper');
+  var wrapper = $('.wrapper');
+
+  arrowDown.on('click', function(evt) {
+    evt.preventDefault();
+    wrapper.animate({
+      'top': '-100%'
+    }, 700)
+  });
 }
 
 if (document.documentElement.clientWidth < 960) {
@@ -332,7 +357,7 @@ if (document.documentElement.clientWidth < 960) {
             animation = false;
             topPosition -= 100;
             wrapper.animate({
-              'top': topPosition + 'vh'
+              'top': topPosition + '%'
             }, 700, function() {
               animation = true;
             });
@@ -342,7 +367,7 @@ if (document.documentElement.clientWidth < 960) {
             animation = false;
             topPosition += 100;
             wrapper.animate({
-              'top': topPosition + 'vh'
+              'top': topPosition + '%'
             }, 700, function() {
               animation = true;
             });
