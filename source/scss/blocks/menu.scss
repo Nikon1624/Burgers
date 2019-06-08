@@ -20,7 +20,6 @@
   bottom: 0;
   display: flex;
   color: #ffffff;
-  z-index: 5;
 }
 
 .menu__item {
@@ -143,6 +142,7 @@
 
 .menu__item--active {
   max-width: 620px;
+  z-index: 5;
 
   .menu__desc-wrapper {
     max-width: 540px;

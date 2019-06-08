@@ -252,13 +252,14 @@ function closePopups(popup, activeClass) {
 }
 
 // OnePageScroll
-if (document.documentElement.clientHeight >= 650) {
+if (document.documentElement.clientHeight >= 700) {
   $(document).ready(function() {
     var wrapper = $('.wrapper');
     var topPosition = 0;
     var maxTopPosition = -($('.section').length - 1) * 100;
     var animation = true;
     var toggles = $('.toggle__item');
+    var menuLinks = $('[data-scroll-index]');
     var toggleActive = toggles.filter('.toggle__item--active');
     var nextToggle = toggleActive.next();
 
@@ -298,6 +299,58 @@ if (document.documentElement.clientHeight >= 650) {
       }
     });
 
+    $('body').on('keydown', function (evt) {
+      switch (evt.keyCode) {
+        case 40:
+          if (topPosition != maxTopPosition && animation) {
+            animation = false;
+            topPosition -= 100;
+            wrapper.animate({
+              'top': topPosition + 'vh'
+            }, 700, function() {
+            toggleActive.removeClass('toggle__item--active');
+            nextToggle.addClass('toggle__item--active');
+            toggleActive = nextToggle;
+            nextToggle = nextToggle.next();
+            animation = true;
+            });
+          }
+          break;
+        case 38:
+          if (topPosition != 0 && animation) {
+            animation = false;
+            topPosition += 100;
+            wrapper.animate({
+              'top': topPosition + 'vh'
+            }, 700, function() {
+            var prevToggle = toggleActive.prev();
+            toggleActive.removeClass('toggle__item--active');
+            prevToggle.addClass('toggle__item--active');
+            nextToggle = toggleActive;
+            toggleActive = prevToggle;
+            prevToggle = prevToggle.prev();
+            animation = true;
+          });
+        }
+      }
+    });
+
+    menuLinks.on('click', function (evt) {
+      evt.preventDefault();
+      var measurementUnit = (document.documentElement.clientWidth < 960) ? '%' : 'vh';
+      var menuLinkIndex = parseInt($(this).attr('data-scroll-index'));
+      wrapper.animate({
+        'top': -(menuLinkIndex * 100) + measurementUnit
+      }, 700, function() {
+        topPosition = -(menuLinkIndex * 100);
+        toggleActive.removeClass('toggle__item--active');
+        toggles.eq(menuLinkIndex).addClass('toggle__item--active');
+        toggleActive = toggles.eq(menuLinkIndex);
+        prevToggle = toggles.eq(menuLinkIndex).prev();
+        nextToggle = toggles.eq(menuLinkIndex).next();
+      });
+    });
+
     toggles.on('click', function(evt) {
       evt.preventDefault();
       var $this = $(this);
@@ -317,9 +370,11 @@ if (document.documentElement.clientHeight >= 650) {
 
     arrowDown.on('click', function(evt) {
       evt.preventDefault();
+      topPosition = 0;
       topPosition -= 100;
+      var measurementUnit = (document.documentElement.clientWidth < 960) ? '%' : 'vh';
       wrapper.animate({
-        'top': topPosition + 'vh'
+        'top': topPosition + measurementUnit
       }, 700, function() {
         toggleActive.removeClass('toggle__item--active');
         nextToggle.addClass('toggle__item--active');
@@ -328,57 +383,47 @@ if (document.documentElement.clientHeight >= 650) {
         animation = true;
       });
     });
+
+    if (document.documentElement.clientWidth < 960) {
+      $(function() {
+        $('.wrapper').swipe( {
+          swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+            $('body').addClass('hidden--onepagescroll');
+            if (direction == 'up') {
+              if (topPosition != maxTopPosition && animation) {
+                animation = false;
+                topPosition -= 100;
+                wrapper.animate({
+                  'top': topPosition + '%'
+                }, 700, function() {
+                  animation = true;
+                });
+              }
+            } else if (direction = 'down') {
+              if (topPosition != 0 && animation) {
+                animation = false;
+                topPosition += 100;
+                wrapper.animate({
+                  'top': topPosition + '%'
+                }, 700, function() {
+                  animation = true;
+                });
+              }
+            }
+          }
+        });
+
+        $('.wrapper').swipe( {fingers:1} );
+      });
+    }
   });
 } else {
   $('.toggle').css('display', 'none');
   var arrowDown = $('.arrow-wrapper');
   var wrapper = $('.wrapper');
-
-  arrowDown.on('click', function(evt) {
-    evt.preventDefault();
-    wrapper.animate({
-      'top': '-100%'
-    }, 700)
-  });
 }
 
-if (document.documentElement.clientWidth < 960 && document.documentElement.clientHeight >= 700) {
-  $(function() {
-    var wrapper = $('.wrapper');
-        var topPosition = 0;
-        var maxTopPosition = -($('.section').length - 1) * 100;
-        var animation = true;
-    $('.wrapper').swipe( {
-      swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
-        $('body').addClass('hidden--onepagescroll');
 
-        if (direction == 'up') {
-          if (topPosition != maxTopPosition && animation) {
-            animation = false;
-            topPosition -= 100;
-            wrapper.animate({
-              'top': topPosition + '%'
-            }, 700, function() {
-              animation = true;
-            });
-          }
-        } else if (direction = 'down') {
-          if (topPosition != 0 && animation) {
-            animation = false;
-            topPosition += 100;
-            wrapper.animate({
-              'top': topPosition + '%'
-            }, 700, function() {
-              animation = true;
-            });
-          }
-        }
-      }
-    });
-
-    $('.wrapper').swipe( {fingers:1} );
-  });
-}
 
 // Карта
 ymaps.ready(init);
@@ -440,5 +485,107 @@ function init () {
   // });
 
   // map.geoObjects.add(placemark);
+}
+
+
+var player;
+
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player("yt-player", {
+    width: "660",
+    height: "405",
+    videoId: "zmg_jOwa9Fc",
+    playerVars: {
+      controls: 0,
+      disablekb: 0,
+      showinfo: 0,
+      rel: 0,
+      autoplay: 0,
+      modestbranding: 0
+    },
+    events: {
+      onReady: onPlayerReady,
+      onStateChange: onPlayerStateChange
+    }
+  });
+}
+
+function onPlayerReady(event) {
+  const duration = player.getDuration();
+  let interval;
+  updateTimerDisplay();
+
+  $(".player").removeClass("hidden");
+
+  clearInterval(interval);
+
+  interval = setInterval(() => {
+    const completed = player.getCurrentTime();
+    const percents = (completed / duration) * 100;
+
+    changeButtonPosition(percents);
+
+    updateTimerDisplay();
+  }, 1000);
+}
+
+function onPlayerStateChange(event) {
+  const playerButton = $(".player__start");
+  switch (event.data) {
+    case 1:
+      $(".player__wrapper").addClass("active");
+      playerButton.addClass("paused");
+      break;
+    case 2:
+      playerButton.removeClass("paused");
+      break;
+  }
+}
+
+$(".player__start").on("click", e => {
+  const playerStatus = player.getPlayerState(); // 0 - ended, 1 - played, 2 - paused ...
+
+  if (playerStatus !== 1) {
+    player.playVideo();
+  } else {
+    player.pauseVideo();
+  }
+});
+
+
+$(".player__playback").on("click", e => {
+  e.preventDefault();
+  const bar = $(e.currentTarget);
+  const newButtonPosition = e.pageX - bar.offset().left;
+  const clickedPercents = (newButtonPosition / bar.width()) * 100;
+  const newPlayerTime = (player.getDuration() / 100) * clickedPercents;
+
+  changeButtonPosition(clickedPercents);
+  player.seekTo(newPlayerTime);
+});
+
+$(".player__splash").on("click", e => {
+  player.playVideo();
+});
+
+function changeButtonPosition(percents) {
+  $(".player__playback-button").css({
+    left: `${percents}%`
+  });
+}
+
+function updateTimerDisplay() {
+  $(".player__duration-completed").text(formatTime(player.getCurrentTime()));
+  $(".player__duration-estimate").text(formatTime(player.getDuration()));
+}
+
+function formatTime(time) {
+  const roundTime = Math.round(time);
+
+  const minutes = Math.floor(roundTime / 60);
+  const seconds = roundTime - minutes * 60;
+  const formatedSeconds = seconds < 10 ? `0${seconds}` : seconds;
+
+  return minutes + ":" + formatedSeconds;
 }
 

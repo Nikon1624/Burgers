@@ -7,31 +7,15 @@
 }
 
 .video__container {
-  height: 100%;
-}
-
-.video__content-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
   height: 100%;
 }
 
 .video__title {
   margin-bottom: 20px;
-}
-
-.video__movie {
-  width: 70%;
-  height: auto;
-}
-
-@media (max-width: 960px) {
-  .video__movie {
-    width: 100%;
-  }
 }
 
 @media (max-width: 768px) {
@@ -40,3 +24,4 @@
     text-align: center;
   }
 }
+
