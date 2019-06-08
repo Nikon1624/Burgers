@@ -17,6 +17,7 @@
   align-items: center;
   align-content: center;
   flex-grow: 1;
+  height: 100%;
 }
 
 .intro__img-wrapper {
@@ -73,7 +74,7 @@
   }
 
   .intro__img-wrapper {
-    width: 100%;
+    width: 60%;
     padding-left: 0;
     margin-top: 0;
     margin-bottom: 25px;
@@ -92,13 +93,18 @@
     margin: 0;
   }
 
+  .intro__img-wrapper {
+    width: 90%;
+    margin-bottom: 5px;
+  }
+
   .intro__lead-title {
     font-size: 4.5rem;
     line-height: 1;
   }
 
   .intro__lead-text {
-    font-size: 3.8571rem;
+    font-size: 3rem;
     line-height: 1.11;
   }
 }

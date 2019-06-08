@@ -60,25 +60,25 @@
               <button class="main-nav__toggle" type="button" aria-label="Открыть/закрыть меню"></button>
               <ul class="main-nav__list">
                 <li class="main-nav__item">
-                  <a class="main-nav__link" href="#advantages">О нас</a>
+                  <a class="main-nav__link" href="#advantages" data-scroll-index="1">О нас</a>
                 </li>
                 <li class="main-nav__item">
-                  <a class="main-nav__link" href="#slider">Бургеры</a>
+                  <a class="main-nav__link" href="#slider" data-scroll-index="2">Бургеры</a>
                 </li>
                 <li class="main-nav__item">
-                  <a class="main-nav__link" href="#team">Команда</a>
+                  <a class="main-nav__link" href="#team" data-scroll-index="3">Команда</a>
                 </li>
                 <li class="main-nav__item">
-                  <a class="main-nav__link" href="#menu">Меню</a>
+                  <a class="main-nav__link" href="#menu" data-scroll-index="4">Меню</a>
                 </li>
                 <li class="main-nav__item">
-                  <a class="main-nav__link" href="#reviews">Отзывы</a>
+                  <a class="main-nav__link" href="#reviews" data-scroll-index="5">Отзывы</a>
                 </li>
                 <li class="main-nav__item">
-                  <a class="main-nav__link" href="#">Как мы работаем</a>
+                  <a class="main-nav__link" href="#" data-scroll-index="6">Как мы работаем</a>
                 </li>
                 <li class="main-nav__item">
-                  <a class="main-nav__link" href="#contacts">Контакты</a>
+                  <a class="main-nav__link" href="#contacts" data-scroll-index="7">Контакты</a>
                 </li>
               </ul>
             </nav>
@@ -803,11 +803,22 @@
 
     <section class="section video webp">
       <div class="container video__container">
-        <div class="video__content-wrapper">
-          <h2 class="title title--black video__title">Как мы работаем</h2>
-          <video class="video__movie" controls poster="img/video_preview.jpg">
-            <source src="https://youtu.be/falY2woMSqg"></source>
-          </video>
+        <h2 class="title title--black video__title">Как мы работаем</h2>
+        <div class="player hidden">
+          <div class="player__wrapper">
+            <div id="yt-player"></div>
+            <div class="player__splash"></div>
+          </div>
+          <div class="player__controls">
+            <button class="player__start"></button>
+            <div class="player__playback">
+              <button class="player__playback-button"></button>
+            </div>
+            <div class="player__duration">
+              <span class="player__duration-completed">0:00</span> :
+              <span class="player__duration-estimate">0:00</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -951,6 +962,7 @@
   <script src="js/jquery.touchSwipe.min.js"></script>
   <script src="https://api-maps.yandex.ru/2.1/?apikey=9dc11724-d7ef-4d78-a578-c4ffe04b01af&lang=ru_RU" type="text/javascript">
   </script>
+  <script src="https://www.youtube.com/iframe_api"></script>
   <script src="./js/script.js"></script>
 
 </body>
