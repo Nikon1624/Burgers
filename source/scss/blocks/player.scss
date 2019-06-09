@@ -1,6 +1,7 @@
 .player {
   position: relative;
   display: inline-block;
+  width: 70%;
 }
 
 .player__splash {
@@ -15,9 +16,20 @@
 }
 
 .player__wrapper {
-  height: 405px;
+  position: relative;
+  height: 0;
+  padding-bottom: 56.25%;
+
   &.active .player__splash {
     display: none;
+  }
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -68,7 +80,7 @@
 .player__playback {
   position: absolute;
   height: 4px;
-  width: 446px;
+  width: calc(100% - 150px);
   background: #626262;
   top: 15px;
   left: 50px;
@@ -93,4 +105,10 @@
   right: 20px;
   color: #626262;
   font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .player {
+    width: 100%;
+  }
 }

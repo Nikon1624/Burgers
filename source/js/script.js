@@ -262,6 +262,7 @@ if (document.documentElement.clientHeight >= 700) {
     var menuLinks = $('[data-scroll-index]');
     var toggleActive = toggles.filter('.toggle__item--active');
     var nextToggle = toggleActive.next();
+    var prevToggle;
 
     $('body').addClass('hidden--onepagescroll');
 
@@ -287,7 +288,7 @@ if (document.documentElement.clientHeight >= 700) {
           wrapper.animate({
             'top': topPosition + 'vh'
           }, 700, function() {
-            var prevToggle = toggleActive.prev();
+            prevToggle = toggleActive.prev();
             toggleActive.removeClass('toggle__item--active');
             prevToggle.addClass('toggle__item--active');
             nextToggle = toggleActive;
@@ -323,15 +324,16 @@ if (document.documentElement.clientHeight >= 700) {
             wrapper.animate({
               'top': topPosition + 'vh'
             }, 700, function() {
-            var prevToggle = toggleActive.prev();
-            toggleActive.removeClass('toggle__item--active');
-            prevToggle.addClass('toggle__item--active');
-            nextToggle = toggleActive;
-            toggleActive = prevToggle;
-            prevToggle = prevToggle.prev();
-            animation = true;
-          });
-        }
+              var prevToggle = toggleActive.prev();
+              toggleActive.removeClass('toggle__item--active');
+              prevToggle.addClass('toggle__item--active');
+              nextToggle = toggleActive;
+              toggleActive = prevToggle;
+              prevToggle = prevToggle.prev();
+              animation = true;
+            });
+          }
+          break;
       }
     });
 
@@ -339,16 +341,20 @@ if (document.documentElement.clientHeight >= 700) {
       evt.preventDefault();
       var measurementUnit = (document.documentElement.clientWidth < 960) ? '%' : 'vh';
       var menuLinkIndex = parseInt($(this).attr('data-scroll-index'));
-      wrapper.animate({
-        'top': -(menuLinkIndex * 100) + measurementUnit
-      }, 700, function() {
-        topPosition = -(menuLinkIndex * 100);
-        toggleActive.removeClass('toggle__item--active');
-        toggles.eq(menuLinkIndex).addClass('toggle__item--active');
-        toggleActive = toggles.eq(menuLinkIndex);
-        prevToggle = toggles.eq(menuLinkIndex).prev();
-        nextToggle = toggles.eq(menuLinkIndex).next();
-      });
+      if (animation) {
+        animation = false;
+        wrapper.animate({
+          'top': -menuLinkIndex * 100 + measurementUnit
+        }, 700, function() {
+          topPosition = -menuLinkIndex * 100;
+          toggleActive.removeClass('toggle__item--active');
+          toggles.eq(menuLinkIndex).addClass('toggle__item--active');
+          toggleActive = toggles.eq(menuLinkIndex);
+          prevToggle = toggles.eq(menuLinkIndex).prev();
+          nextToggle = toggles.eq(menuLinkIndex).next();
+          animation = true;
+        });
+      }
     });
 
     toggles.on('click', function(evt) {
