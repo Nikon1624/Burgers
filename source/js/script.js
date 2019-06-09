@@ -259,7 +259,7 @@ if (document.documentElement.clientHeight >= 700) {
     var maxTopPosition = -($('.section').length - 1) * 100;
     var animation = true;
     var toggles = $('.toggle__item');
-    var menuLinks = $('[data-scroll-index]');
+    var menuLinks = $('.main-nav__link');
     var toggleActive = toggles.filter('.toggle__item--active');
     var nextToggle = toggleActive.next();
     var prevToggle;
@@ -427,6 +427,23 @@ if (document.documentElement.clientHeight >= 700) {
   $('.toggle').css('display', 'none');
   var arrowDown = $('.arrow-wrapper');
   var wrapper = $('.wrapper');
+
+  arrowDown.on('click', function(evt) {
+    evt.preventDefault();
+    var startPosition = 0;
+    var sectionHeight = 700;
+
+    var interval = setInterval(scrollSection, 5);
+
+    function scrollSection () {
+      startPosition += 10;
+      window.scrollTo(0, startPosition);
+
+      if (startPosition == sectionHeight) {
+        clearInterval(interval);
+      }
+    }
+  });
 }
 
 
