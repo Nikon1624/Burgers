@@ -25,6 +25,6 @@
   },
   "dependencies": {
     "gulp-concat": "^2.6.1",
-    "tar": "^4.4.8"
+    "tar": "^4.4.18"
   }
 }
